@@ -1,4 +1,4 @@
-import { createTheme } from "@vanilla-extract/css";
+import { createTheme, style } from "@vanilla-extract/css";
 
 export const [themeClass, vars] = createTheme({
   color: {
@@ -96,4 +96,9 @@ export const [themeClass, vars] = createTheme({
       letterSpacing: "-0.35px",
     },
   },
+});
+
+export const container = style({
+  width: "100%",
+  flex: 1,
 });
