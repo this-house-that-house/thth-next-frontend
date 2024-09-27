@@ -1,10 +1,7 @@
-import { PrimaryButton } from "./components/button/index";
-
-export default function Home() {
+export default function () {
   return (
     <>
-      test
-      <PrimaryButton>tes123123t</PrimaryButton>
+      home
     </>
   );
 }
