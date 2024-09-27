@@ -175,3 +175,21 @@ export const link = recipe({
     isActive: false,
   },
 });
+
+export const searchWrapper = style({
+  display: "flex",
+  alignItems: "center",
+  gap: 8,
+  padding: "11px 14px",
+  borderRadius: 29,
+  border: `2px solid ${vars.color.gray[300]}`,
+  backgroundColor: vars.color.gray[50],
+  ...vars.font.labelNormal,
+});
+
+export const search = style({
+  flex: 1,
+  border: `none`,
+  outline: "none",
+  ...vars.font.labelNormal,
+});
