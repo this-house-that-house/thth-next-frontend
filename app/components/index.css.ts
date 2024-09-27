@@ -118,3 +118,60 @@ export const icon = recipe({
     color: "gray",
   },
 });
+
+export const button = recipe({
+  base: {
+    display: "flex",
+    padding: "17px",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "none",
+    borderRadius: vars.borderRadius,
+    color: vars.color.gray[50],
+    ":disabled": {
+      backgroundColor: vars.color.gray[200],
+      color: vars.color.gray[500],
+    },
+  },
+  variants: {
+    color: {
+      primary: { backgroundColor: vars.color.primary[100] },
+      secondary: { backgroundColor: vars.color.gray[200] },
+      yellow: { backgroundColor: vars.color.yellow },
+      orange: { backgroundColor: vars.color.orange },
+      green: { backgroundColor: vars.color.green },
+    },
+  },
+  defaultVariants: {
+    color: "primary",
+  },
+});
+export const nav = style({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "10px 30px 30px 30px",
+  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)",
+});
+
+export const link = recipe({
+  base: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    color: vars.color.gray[400],
+    gap: "4px",
+    textDecoration: "none",
+    ...vars.font.labelNormal,
+  },
+  variants: {
+    isActive: {
+      false: { color: vars.color.gray[400] },
+      true: { color: vars.color.primary[100] },
+    },
+  },
+  defaultVariants: {
+    isActive: false,
+  },
+});

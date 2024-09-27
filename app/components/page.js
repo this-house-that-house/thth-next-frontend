@@ -1,10 +1,10 @@
-import { PrimaryButton } from "./button/index";
+import { button } from "./index.css";
 
 export default function () {
   return (
     <div>
-      <PrimaryButton>시작하기</PrimaryButton>
-      <PrimaryButton disabled>시작하기</PrimaryButton>
+      <button className={button()}>시작하기</button>
+      <button className={button()} disabled>시작하기</button>
     </div>
   );
 }
