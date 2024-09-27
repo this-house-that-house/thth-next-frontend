@@ -7,6 +7,7 @@ export const nav = style({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "10px 30px 30px 30px",
+  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)",
 });
 
 export const link = recipe({
@@ -17,6 +18,7 @@ export const link = recipe({
     alignItems: "center",
     color: vars.color.gray[400],
     gap: "4px",
+    textDecoration: "none",
     ...vars.font.labelNormal,
   },
   variants: {
@@ -28,9 +30,4 @@ export const link = recipe({
   defaultVariants: {
     isActive: false,
   },
-});
-
-export const a = style({
-  textDecoration: "none",
-  color: "inherit",
 });

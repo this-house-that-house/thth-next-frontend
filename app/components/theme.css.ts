@@ -1,4 +1,5 @@
 import { createTheme, style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
 
 export const [themeClass, vars] = createTheme({
   color: {
@@ -101,4 +102,19 @@ export const [themeClass, vars] = createTheme({
 export const container = style({
   width: "100%",
   flex: 1,
+});
+
+export const icon = recipe({
+  variants: {
+    color: {
+      gray: { fill: vars.color.gray[400] },
+      primary: { fill: vars.color.primary[100] },
+      yellow: { fill: vars.color.yellow },
+      orange: { fill: vars.color.orange },
+      green: { fill: vars.color.green },
+    },
+  },
+  defaultVariants: {
+    color: "gray",
+  },
 });
