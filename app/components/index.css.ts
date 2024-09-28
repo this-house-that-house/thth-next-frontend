@@ -343,3 +343,30 @@ export const cardIcon = style({
   top: 8,
   right: 8
 });
+
+export const tag = recipe({
+  base: {
+    padding: "2px 12px",
+    borderRadius: 5,
+    ...vars.font.labelNormal
+  },
+  variants: {
+    color: {
+      primary: {
+        backgroundColor: vars.color.primary.lighten[400],
+        color: vars.color.primary[100]
+      },
+      yellow: {
+        backgroundColor: vars.color.lightYellow,
+        color: vars.color.orange
+      },
+      green: {
+        backgroundColor: vars.color.lightGreen,
+        color: vars.color.green
+      }
+    }
+  },
+  defaultVariants: {
+    color: "primary"
+  }
+});

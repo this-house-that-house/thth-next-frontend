@@ -1,8 +1,4 @@
-import {
-  button,
-  search,
-  searchWrapper,
-} from "./index.css";
+import * as Styles from "./index.css";
 import Search from "../svgs/search.svg";
 import Card from "./card";
 import Address from "./address";
@@ -12,19 +8,20 @@ export default function () {
     <div
       style={{
         display: "flex",
+        alignItems: "start",
         flexDirection: "column",
         padding: "10px",
         gap: "10px"
       }}
     >
-      <button className={button()}>시작하기</button>
-      <button className={button()} disabled>
+      <button className={Styles.button()}>시작하기</button>
+      <button className={Styles.button()} disabled>
         시작하기
       </button>
-      <div className={searchWrapper}>
+      <div className={Styles.searchWrapper}>
         <Search />
         <input
-          className={search}
+          className={Styles.search}
           placeholder='지역, 주소, 건물명을 입력해보세요'
         />
       </div>
@@ -43,6 +40,9 @@ export default function () {
         like={false}
         size={'large'}
       />
-    </div>
+      <span className={Styles.tag({ color: "primary" })}>원룸</span>
+      <span className={Styles.tag({ color: "yellow" })}>투룸</span>
+      <span className={Styles.tag({ color: "green" })}>오피스텔</span>
+    </div >
   );
 }
