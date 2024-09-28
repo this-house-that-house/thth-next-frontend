@@ -1,9 +1,8 @@
-import * as Styles from "./index.css";
-import Button from "./button";
-import Card from "./card";
-import Address from "./address";
-import Search from "./search";
-import Tag from "./tag";
+import Button from "./Button";
+import Card from "./Card";
+import Address from "./Address";
+import Search from "./Search";
+import Tag from "./Tag";
 
 export default function () {
   return (

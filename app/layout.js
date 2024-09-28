@@ -1,6 +1,6 @@
 import "./globals.css";
 import { themeClass, container } from "./components/index.css";
-import Nav from "./components/nav";
+import Nav from "./components/Nav";
 
 export const metadata = {
   title: "이집저집",
