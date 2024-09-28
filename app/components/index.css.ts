@@ -148,13 +148,13 @@ export const icon = recipe({
     },
     strokeColor: {
       transparent: { stroke: "transparent" },
-      gray: { stroke: vars.color.gray[400] },
-      lightGray: { stroke: vars.color.gray[300] },
-      white: { stroke: vars.color.gray[50] },
-      primary: { stroke: vars.color.primary[100] },
-      yellow: { stroke: vars.color.yellow },
-      orange: { stroke: vars.color.orange },
-      green: { stroke: vars.color.green }
+      gray: { stroke: vars.color.gray[400], strokeWidth: 2 },
+      lightGray: { stroke: vars.color.gray[300], strokeWidth: 2 },
+      white: { stroke: vars.color.gray[50], strokeWidth: 2 },
+      primary: { stroke: vars.color.primary[100], strokeWidth: 2 },
+      yellow: { stroke: vars.color.yellow, strokeWidth: 2 },
+      orange: { stroke: vars.color.orange, strokeWidth: 2 },
+      green: { stroke: vars.color.green, strokeWidth: 2 }
     }
   },
   defaultVariants: {
