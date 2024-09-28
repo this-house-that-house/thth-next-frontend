@@ -222,6 +222,7 @@ export const link = recipe({
 });
 
 export const searchWrapper = style({
+  width: "100%",
   display: "flex",
   alignItems: "center",
   gap: 8,

@@ -1,7 +1,7 @@
 import * as Styles from "./index.css";
-import Search from "../svgs/search.svg";
 import Card from "./card";
 import Address from "./address";
+import Search from "./search";
 
 export default function () {
   return (
@@ -18,13 +18,7 @@ export default function () {
       <button className={Styles.button()} disabled>
         시작하기
       </button>
-      <div className={Styles.searchWrapper}>
-        <Search />
-        <input
-          className={Styles.search}
-          placeholder='지역, 주소, 건물명을 입력해보세요'
-        />
-      </div>
+      <Search placeholder="어떤 집의 리뷰를 볼까요?" />
       <Address title="인하주택" description="인천 미추홀구 경인남길 48" />
       <Card
         title='인하주택'
