@@ -3,6 +3,7 @@ import Card from "./Card";
 import Address from "./Address";
 import Search from "./Search";
 import Tag from "./Tag";
+import Check from "./Check";
 
 export default function () {
   return (
@@ -36,6 +37,7 @@ export default function () {
       <Tag color="primary">원룸</Tag>
       <Tag color="yellow">투룸</Tag>
       <Tag color="green">오피스텔</Tag>
+      <Check color="primary">🗑 분리수거</Check>
     </div >
   );
 }

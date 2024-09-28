@@ -21,7 +21,8 @@ export const [themeClass, vars] = createTheme({
         100: "#ff4d4d",
         200: "#ff7d7d",
         300: "#ffa0a0",
-        400: "#ffe1e1"
+        400: "#ffe1e1",
+        "400/50": "#ffe1e180"
       },
       darken: {
         100: "#c82020",
@@ -370,4 +371,30 @@ export const tag = recipe({
   defaultVariants: {
     color: "primary"
   }
+});
+
+export const toggleButtonWrapper = style({
+  display: "flex",
+  gap: 8,
+  padding: "10px 14px",
+  borderRadius: vars.borderRadius,
+  selectors: {
+    "&:has(input[type=checkbox])": {
+      color: vars.color.gray[700],
+      backgroundColor: "white",
+      border: "1.5px solid transparent",
+      boxShadow: `0px 0px 5px 0px rgba(24, 24, 27, 0.14)`
+    },
+    "&:has(input[type=checkbox]:checked)": {
+      color: vars.color.primary.lighten[100],
+      backgroundColor: vars.color.primary.lighten["400/50"],
+      border: `1.5px solid ${vars.color.primary.lighten[200]}`,
+      boxShadow: "0px 0px 10px 0px rgba(24, 24, 27, 0.07)"
+    }
+  },
+  ...vars.font.bodyM14
+});
+
+export const toggleInput = style({
+  display: "none"
 });
