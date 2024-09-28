@@ -108,6 +108,7 @@ export const icon = recipe({
   variants: {
     color: {
       gray: { fill: vars.color.gray[400] },
+      lightGray: { fill: vars.color.gray[300] },
       primary: { fill: vars.color.primary[100] },
       yellow: { fill: vars.color.yellow },
       orange: { fill: vars.color.orange },
@@ -192,4 +193,44 @@ export const search = style({
   border: `none`,
   outline: "none",
   ...vars.font.labelNormal,
+});
+
+export const addressBox = style({
+  display: "flex",
+  gap: 8,
+  padding: "0px 13px",
+});
+
+export const addressTextBox = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 4,
+});
+
+export const typo = recipe({
+  variants: {
+    type: {
+      headingB28: vars.font.headingB28,
+      headingSB28: vars.font.headingSB28,
+      headingSB24: vars.font.headingSB24,
+      bodyM18: vars.font.bodyM18,
+      bodyM16: vars.font.bodyM16,
+      bodyR18: vars.font.bodyR18,
+      bodyR16: vars.font.bodyR16,
+      buttonLarge: vars.font.buttonLarge,
+      labelNormal: vars.font.labelNormal,
+    },
+    color: {
+      gray: { color: vars.color.gray[900] },
+      lightGray: { color: vars.color.gray[400] },
+      primary: { color: vars.color.primary[100] },
+      yellow: { color: vars.color.yellow },
+      orange: { color: vars.color.orange },
+      green: { color: vars.color.green },
+    },
+  },
+  defaultVariants: {
+    type: "labelNormal",
+    color: "gray",
+  },
 });
