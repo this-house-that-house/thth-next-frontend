@@ -416,7 +416,8 @@ export const checkWrapper = recipe({
         }
       },
       square: {
-        padding: "44px 40px",
+        width: 112,
+        height: 112,
         backgroundColor: vars.color.gray[100],
         border: `2px solid ${vars.color.gray[100]}`,
         borderRadius: vars.borderRadius,
@@ -437,7 +438,7 @@ export const checkWrapper = recipe({
         backgroundColor: "white",
         border: "1.5px solid transparent",
         boxShadow: `0px 0px 5px 0px rgba(24, 24, 27, 0.14)`,
-        ...vars.font.bodyM14,
+        ...vars.font.labelNormal,
         selectors: {
           "&:has(input[type=checkbox]:checked)": {
             color: vars.color.primary.lighten[100],
