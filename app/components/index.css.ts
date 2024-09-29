@@ -473,3 +473,12 @@ export const checkbox = style({
     }
   }
 });
+
+export const textArea = style({
+  padding: "18px",
+  backgroundColor: vars.color.gray[100],
+  borderRadius: vars.borderRadius,
+  outline: "none",
+  border: "none",
+  ...vars.font.bodyR14
+});
