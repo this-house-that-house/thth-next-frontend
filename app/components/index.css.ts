@@ -391,41 +391,41 @@ export const checkWrapper = recipe({
         height: 30,
         borderRadius: "50%",
         boxShadow: "none !important",
-        border: `2px solid ${vars.color.gray[300]}`,
+        border: `1.5px solid ${vars.color.gray[300]}`,
         backgroundColor: vars.color.gray[100],
         color: "transparent",
         ...vars.font.bodyM16,
         selectors: {
           "&:has(input[type=checkbox]:checked)": {
-            backgroundColor: vars.color.primary.lighten[400],
-            color: vars.color.primary[100],
-            borderColor: vars.color.primary[100]
+            backgroundColor: "#FFF2F2",
+            borderColor: vars.color.primary.lighten[100],
+            color: vars.color.primary[100]
           }
         }
       },
       box: {
         padding: "18px",
         backgroundColor: "white",
-        border: `2px solid white`,
+        border: `1.5px solid white`,
         borderRadius: vars.borderRadius,
         boxShadow: `0px 0px 6px 0px rgba(74, 74, 74, 0.20)`,
         ...vars.font.headingSB18,
         "&:has(input[type=checkbox]:checked)": {
-          backgroundColor: vars.color.primary.lighten[400],
-          borderColor: vars.color.primary[100]
+          backgroundColor: "#FFF2F2",
+          borderColor: vars.color.primary.lighten[200]
         }
       },
       square: {
         width: 112,
         height: 112,
         backgroundColor: vars.color.gray[100],
-        border: `2px solid ${vars.color.gray[100]}`,
+        border: `1.5px solid ${vars.color.gray[100]}`,
         borderRadius: vars.borderRadius,
         color: vars.color.gray[900],
         ...vars.font.bodyM18,
         selectors: {
           "&:has(input[type=checkbox]:checked)": {
-            backgroundColor: vars.color.primary.lighten["400/50"],
+            backgroundColor: "#FFF2F2",
             borderColor: vars.color.primary.lighten[200],
             color: vars.color.primary[100]
           }
@@ -441,9 +441,9 @@ export const checkWrapper = recipe({
         ...vars.font.labelNormal,
         selectors: {
           "&:has(input[type=checkbox]:checked)": {
+            backgroundColor: "#FFF2F2",
+            borderColor: vars.color.primary.lighten[200],
             color: vars.color.primary.lighten[100],
-            backgroundColor: vars.color.primary.lighten["400/50"],
-            border: `1.5px solid ${vars.color.primary.lighten[200]}`,
             boxShadow: "0px 0px 10px 0px rgba(24, 24, 27, 0.07)"
           }
         }
