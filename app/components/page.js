@@ -37,7 +37,11 @@ export default function () {
       <Tag color="primary">원룸</Tag>
       <Tag color="yellow">투룸</Tag>
       <Tag color="green">오피스텔</Tag>
-      <Check color="primary">🗑 분리수거</Check>
+      <Check variant="default" checkboxVisible>편의점</Check>
+      <Check variant="circle">4</Check>
+      <Check variant="box" checkboxVisible>인하주택</Check>
+      <Check variant="square">냉장고</Check>
+      <Check variant="tag">🗑 분리수거</Check>
     </div >
   );
 }

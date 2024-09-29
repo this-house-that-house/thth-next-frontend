@@ -57,7 +57,7 @@ export const [themeClass, vars] = createTheme({
     },
     headingSB22: {
       fontFamily: "Pretendard-SemiBold",
-      fontSize: "24px",
+      fontSize: "22px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
@@ -69,7 +69,7 @@ export const [themeClass, vars] = createTheme({
     },
     headingSB18: {
       fontFamily: "Pretendard-SemiBold",
-      fontSize: "24px",
+      fontSize: "18px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
@@ -373,28 +373,102 @@ export const tag = recipe({
   }
 });
 
-export const toggleButtonWrapper = style({
-  display: "flex",
-  gap: 8,
-  padding: "10px 14px",
-  borderRadius: vars.borderRadius,
-  selectors: {
-    "&:has(input[type=checkbox])": {
-      color: vars.color.gray[700],
-      backgroundColor: "white",
-      border: "1.5px solid transparent",
-      boxShadow: `0px 0px 5px 0px rgba(24, 24, 27, 0.14)`
-    },
-    "&:has(input[type=checkbox]:checked)": {
-      color: vars.color.primary.lighten[100],
-      backgroundColor: vars.color.primary.lighten["400/50"],
-      border: `1.5px solid ${vars.color.primary.lighten[200]}`,
-      boxShadow: "0px 0px 10px 0px rgba(24, 24, 27, 0.07)"
-    }
+export const checkWrapper = recipe({
+  base: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8
   },
-  ...vars.font.bodyM14
+  variants: {
+    variant: {
+      default: {
+        color: vars.color.gray[900],
+        ...vars.font.bodyM16
+      },
+      circle: {
+        width: 30,
+        height: 30,
+        borderRadius: "50%",
+        boxShadow: "none !important",
+        border: `2px solid ${vars.color.gray[300]}`,
+        backgroundColor: vars.color.gray[100],
+        color: "transparent",
+        ...vars.font.bodyM16,
+        selectors: {
+          "&:has(input[type=checkbox]:checked)": {
+            backgroundColor: vars.color.primary.lighten[400],
+            color: vars.color.primary[100],
+            borderColor: vars.color.primary[100]
+          }
+        }
+      },
+      box: {
+        padding: "18px",
+        backgroundColor: "white",
+        border: `2px solid white`,
+        borderRadius: vars.borderRadius,
+        boxShadow: `0px 0px 6px 0px rgba(74, 74, 74, 0.20)`,
+        ...vars.font.headingSB18,
+        "&:has(input[type=checkbox]:checked)": {
+          backgroundColor: vars.color.primary.lighten[400],
+          borderColor: vars.color.primary[100]
+        }
+      },
+      square: {
+        padding: "44px 40px",
+        backgroundColor: vars.color.gray[100],
+        border: `2px solid ${vars.color.gray[100]}`,
+        borderRadius: vars.borderRadius,
+        color: vars.color.gray[900],
+        ...vars.font.bodyM18,
+        selectors: {
+          "&:has(input[type=checkbox]:checked)": {
+            backgroundColor: vars.color.primary.lighten["400/50"],
+            borderColor: vars.color.primary.lighten[200],
+            color: vars.color.primary[100]
+          }
+        }
+      },
+      tag: {
+        padding: "10px 14px",
+        borderRadius: vars.borderRadius,
+        color: vars.color.gray[700],
+        backgroundColor: "white",
+        border: "1.5px solid transparent",
+        boxShadow: `0px 0px 5px 0px rgba(24, 24, 27, 0.14)`,
+        ...vars.font.bodyM14,
+        selectors: {
+          "&:has(input[type=checkbox]:checked)": {
+            color: vars.color.primary.lighten[100],
+            backgroundColor: vars.color.primary.lighten["400/50"],
+            border: `1.5px solid ${vars.color.primary.lighten[200]}`,
+            boxShadow: "0px 0px 10px 0px rgba(24, 24, 27, 0.07)"
+          }
+        }
+      }
+    }
+  }
 });
 
-export const toggleInput = style({
+export const none = style({
   display: "none"
+});
+
+export const checkbox = style({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: 20,
+  height: 20,
+  borderRadius: "50%",
+  border: `2px solid ${vars.color.gray[300]}`,
+  backgroundColor: vars.color.gray[100],
+  selectors: {
+    "&:has(input[type=checkbox]:checked)": {
+      backgroundColor: vars.color.primary[100],
+      color: vars.color.gray[50],
+      borderColor: vars.color.primary[100]
+    }
+  }
 });
