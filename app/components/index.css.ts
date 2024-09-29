@@ -482,3 +482,75 @@ export const textArea = style({
   border: "none",
   ...vars.font.bodyR14
 });
+
+export const slider = style({
+  position: "relative",
+  width: "100%",
+  padding: 0,
+  overflow: "hidden",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  flexDirection: "row",
+  flexWrap: "nowrap",
+  backgroundColor: "transparent"
+});
+
+export const sliderItemWrapper = style({
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+export const sliderLinks = style({
+  position: "absolute",
+  bottom: "5%",
+  left: "50%",
+  transform: "translateX(-50%)"
+});
+
+export const sliderLink = recipe({
+  base: {
+    display: "inline-block",
+    width: 10,
+    height: 10,
+    borderRadius: "50%",
+    backgroundColor: "#D9D9D9",
+    padding: 0,
+    margin: "0 5px",
+    cursor: "pointer",
+    border: "none"
+  },
+  variants: {
+    isActive: {
+      false: { backgroundColor: "#D9D9D9" },
+      true: { backgroundColor: vars.color.primary[100] }
+    }
+  },
+  defaultVariants: {
+    isActive: false
+  }
+});
+
+export const sliderItem = recipe({
+  base: {
+    boxSizing: "border-box",
+    minWidth: "100%",
+    height: "auto",
+    overflow: "hidden",
+    objectFit: "cover",
+    transform: "translateX(0)",
+    transition: "transform 1s ease"
+  },
+  variants: {
+    index: {
+      0: { transform: "translateX(0)" },
+      1: { transform: "translateX(-100%)" },
+      2: { transform: "translateX(-200%)" }
+    }
+  },
+  defaultVariants: {
+    index: 0
+  }
+});
