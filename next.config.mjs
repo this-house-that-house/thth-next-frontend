@@ -1,6 +1,5 @@
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 const withVanillaExtract = createVanillaExtractPlugin();
-const isProd = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -15,6 +14,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? 'https://this-house-that-house.github.io/thth-next-frontend/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
 };
 export default withVanillaExtract(nextConfig);
