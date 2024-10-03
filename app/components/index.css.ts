@@ -39,93 +39,115 @@ export const [themeClass, vars] = createTheme({
   font: {
     headingB28: {
       fontFamily: "Pretendard-Bold",
+      fontWeight: "700",
       fontSize: "28px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     headingSB28: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "28px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     headingSB24: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "24px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     headingSB22: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "22px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     headingSB20: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "20px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     headingSB18: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "18px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     bodyM18: {
       fontFamily: "Pretendard-Medium",
+      fontWeight: "500",
       fontSize: "18px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     bodyM16: {
       fontFamily: "Pretendard-Medium",
+      fontWeight: "500",
       fontSize: "16px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     bodyM14: {
       fontFamily: "Pretendard-Medium",
+      fontWeight: "500",
       fontSize: "14px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     bodyR18: {
       fontFamily: "Pretendard-Regular",
+      fontWeight: "400",
       fontSize: "18px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     bodyR16: {
       fontFamily: "Pretendard-Regular",
+      fontWeight: "400",
       fontSize: "16px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     bodyR14: {
       fontFamily: "Pretendard-Regular",
+      fontWeight: "400",
       fontSize: "14px",
       lineHeight: "140%",
       letterSpacing: "-2.5%"
     },
     buttonLarge: {
       fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
       fontSize: "18px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     buttonNormal: {
       fontFamily: "Pretendard-Regular",
+      fontWeight: "400",
       fontSize: "18px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
     },
     labelNormal: {
       fontFamily: "Pretendard-Regular",
+      fontWeight: "400",
       fontSize: "14px",
       lineHeight: "130%",
       letterSpacing: "-2.5%"
+    },
+    logoText: {
+      fontFamily: "YdestreetB",
+      fontSize: "18px",
+      fontStyle: "normal",
+      fontWeight: "700",
+      lineHeight: "120%"
     }
   }
 });
@@ -234,6 +256,7 @@ export const searchWrapper = style({
 });
 
 export const search = style({
+  width: 0,
   flex: 1,
   border: `none`,
   outline: "none",
@@ -291,7 +314,8 @@ export const cardBox = recipe({
     display: "flex",
     flexDirection: "column",
     gap: 6,
-    position: "relative"
+    position: "relative",
+    flexShrink: 0
   },
   variants: {
     size: {
@@ -553,4 +577,35 @@ export const sliderItem = recipe({
   defaultVariants: {
     index: 0
   }
+});
+
+export const logoHeader = style({
+  display: "flex",
+  justifyContent: "start",
+  alignItems: "center",
+  gap: 8,
+  width: "100%",
+  padding: "12px 0 24px 16px"
+});
+
+export const logoText = style({
+  color: vars.color.primary[100],
+  ...vars.font.logoText
+});
+
+export const shadowBox = style({
+  borderRadius: vars.borderRadius,
+  backgroundColor: "white",
+  boxShadow: "0px 0px 6px 0px rgba(74, 74, 74, 0.20)"
+});
+
+export const imagePlaceholder = style({
+  backgroundColor: vars.color.gray[200],
+  borderRadius: vars.borderRadius,
+  width: "100%",
+  flex: 1,
+  minHeight: 0,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
 });

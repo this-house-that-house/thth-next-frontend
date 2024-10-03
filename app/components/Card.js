@@ -1,11 +1,16 @@
 import * as Styles from './index.css';
 import HeartFill from '../svgs/heart-fill.svg';
 import HeartEmpty from '../svgs/heart-empty.svg';
+import PlaceHolderIcon from '../svgs/placeholder.svg';
 
 export default function ({ title, image, description, like, size, onClick, onLike }) {
   return (
     <div className={Styles.cardBox({ size })}>
-      <img src={image} alt={title} className={Styles.cardImg} />
+      {
+        image ?
+          <img src={image} alt={title} className={Styles.cardImg} />
+          : <div className={Styles.imagePlaceholder}><PlaceHolderIcon /> </div>
+      }
       <button className={`${Styles.iconBtn} ${Styles.cardIcon}`}>
         {
           like ?
