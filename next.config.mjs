@@ -16,4 +16,6 @@ const nextConfig = {
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
 };
-export default withVanillaExtract(nextConfig);
+
+const config = withVanillaExtract(nextConfig);
+export default config;
