@@ -11,6 +11,11 @@ const nextConfig = {
 
     return config;
   },
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
 };
 
 const config = withVanillaExtract(nextConfig);
