@@ -182,6 +182,12 @@ table {
   font-weight: 900;
   font-style: normal;
 }
+@font-face {
+  font-family: "YdestreetB";
+  src: url("/fonts/YdestreetB.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
