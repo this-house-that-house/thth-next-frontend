@@ -15,10 +15,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://this-house-that-house.github.io/thth-next-frontend/' : '',
-  reactStrictMode: false,
-  trailingSlash: true,
   basePath: process.env.NODE_ENV === 'production' ? '/thth-next-frontend' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/thth-next-frontend/' : '',
+  reactStrictMode: false,
 };
 
 const config = withVanillaExtract(nextConfig);
