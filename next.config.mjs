@@ -17,6 +17,7 @@ const nextConfig = {
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? 'https://this-house-that-house.github.io/thth-next-frontend/' : '',
   reactStrictMode: false,
+  trailingSlash: true,
 };
 
 const config = withVanillaExtract(nextConfig);
