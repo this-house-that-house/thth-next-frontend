@@ -5,6 +5,7 @@ import HeaderLogoIcon from '../svgs/header-logo.svg'
 import Search from '../components/Search'
 import ArrowRightIcon from '../svgs/arrow-right-tail.svg'
 import Card from '../components/Card'
+import Image from 'next/image'
 
 export default function () {
   const name = '구름'
@@ -100,7 +101,7 @@ export default function () {
           </span>
         </div>
         <div>
-          <img src="/imgs/search.png" width={150} height={150} />
+          <Image src="/imgs/search.png" width={150} height={150} />
         </div>
       </div>
       <div style={{
