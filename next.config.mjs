@@ -16,6 +16,7 @@ const nextConfig = {
     unoptimized: true,
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
+  reactStrictMode: false,
 };
 
 const config = withVanillaExtract(nextConfig);
