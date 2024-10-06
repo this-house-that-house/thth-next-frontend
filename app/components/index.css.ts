@@ -657,3 +657,18 @@ export const tab = recipe({
     active: false
   }
 });
+
+export const center = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+export const bottomBar = style({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "12px",
+  padding: "13px 16px 30px",
+  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)"
+});

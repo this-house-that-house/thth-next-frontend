@@ -1,6 +1,5 @@
 import "./globals.css";
-import { themeClass, container } from "./components/index.css";
-import Nav from "./components/Nav";
+import { themeClass } from "./components/index.css";
 import KakaoInit from "./components/KakaoInit";
 
 export const metadata = {
@@ -13,10 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <KakaoInit />
       <body className={themeClass}>
-        <div className={container}>
-          {children}
-        </div>
-        <Nav />
+        {children}
       </body>
     </html>
   );
