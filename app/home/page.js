@@ -86,7 +86,8 @@ export default function () {
           display: 'flex',
           height: '100%',
           flexDirection: 'column',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          wordBreak: 'keep-all'
         }}>
           <span style={{ ...Styles.vars.font.headingSB18 }}>
             나에게 딱 맞는 자취방을 추천받고 싶다면?
