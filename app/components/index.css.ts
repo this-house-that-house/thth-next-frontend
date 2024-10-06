@@ -319,8 +319,8 @@ export const cardBox = recipe({
   },
   variants: {
     size: {
-      small: { width: 130, height: 198 },
-      large: { width: 294, height: 195 }
+      small: { width: 130, height: 178 },
+      large: { width: 294, height: 244 }
     }
   },
   defaultVariants: {

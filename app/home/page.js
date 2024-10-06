@@ -55,8 +55,29 @@ export default function () {
       }]
     },
   ]
+  const styleList = [
+    {
+      title: '인하주택',
+      image: '',
+      description: '평균 별점 4.7',
+      like: true
+    },
+    {
+      title: '인하주택',
+      image: '',
+      description: '평균 별점 4.7',
+      like: true
+    },
+    {
+      title: '인하주택',
+      image: '',
+      description: '평균 별점 4.7',
+      like: true
+    }
+  ]
   return (
     <>
+      {/* 상단바 */}
       <div className={Styles.logoHeader}>
         <HeaderLogoIcon />
         <span className={Styles.logoText}>
@@ -74,37 +95,72 @@ export default function () {
           <Search placeholder="어떤 집의 리뷰를 볼까요?" />
         </div>
       </div >
-      <div className={Styles.shadowBox} style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 175,
-        padding: '12px 22px',
-        margin: '0px 16px 30px'
-      }}>
-        <div style={{
-          display: 'flex',
-          height: '100%',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          wordBreak: 'keep-all'
-        }}>
-          <span style={{ ...Styles.vars.font.headingSB18 }}>
-            나에게 딱 맞는 자취방을 추천받고 싶다면?
-          </span>
-          <span style={{
-            ...Styles.vars.font.bodyM14,
+      {/* 내 스타일 */}
+      {
+        styleList.length > 0
+          ?
+          <div style={{
             display: 'flex',
-            alignItems: 'center',
+            flexDirection: 'column',
+            gap: 10,
+            marginBottom: 40,
+            paddingLeft: 16,
           }}>
-            <ArrowRightIcon />
-            스타일 입력하러가기
-          </span>
-        </div>
-        <div>
-          <Image src="/imgs/search.png" width={150} height={150} />
-        </div>
-      </div>
+            <p style={{ ...Styles.vars.font.headingSB20 }}>
+              나에게 딱 맞는 자취방
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: 12,
+              overflowX: 'auto',
+              paddingBottom: 16
+            }}>
+              {
+                styleList.map((item, index) => (
+                  <Card
+                    key={index}
+                    title={item.title}
+                    image={item.image}
+                    description={item.description}
+                    like={item.like}
+                    size={'large'}
+                  />
+                ))
+              }
+            </div>
+          </div>
+          :
+          <div className={Styles.shadowBox} style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 175,
+            padding: '12px 22px',
+            margin: '0px 16px 30px'
+          }}>
+            <div style={{
+              display: 'flex',
+              height: '100%',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              wordBreak: 'keep-all'
+            }}>
+              <span style={{ ...Styles.vars.font.headingSB18 }}>
+                나에게 딱 맞는 자취방을 추천받고 싶다면?
+              </span>
+              <span style={{
+                ...Styles.vars.font.bodyM14,
+                display: 'flex',
+                alignItems: 'center',
+              }}>
+                <ArrowRightIcon />
+                스타일 입력하러가기
+              </span>
+            </div>
+            <Image src="/imgs/search.png" width={150} height={150} />
+          </div>
+      }
+      {/* 추천 목록 */}
       <div style={{
         display: 'flex',
         flexDirection: 'column',
