@@ -609,3 +609,51 @@ export const imagePlaceholder = style({
   justifyContent: "center",
   alignItems: "center"
 });
+
+export const floatingTopBar = style({
+  position: "absolute",
+  width: "100%",
+  padding: "14px 16px 0px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between"
+});
+
+export const transparent = style({
+  opacity: 0
+});
+
+export const collage = style({
+  display: "flex",
+  width: "100%",
+  height: "228px"
+});
+
+export const tabs = style({
+  display: "flex",
+  width: "100%"
+});
+
+export const tab = recipe({
+  base: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    padding: "16px 0px",
+    borderBottom: "3px solid " + vars.color.gray[100],
+    color: vars.color.gray[500],
+    ...vars.font.bodyM16
+  },
+  variants: {
+    active: {
+      true: {
+        borderBottomColor: vars.color.primary[100],
+        color: vars.color.gray[900]
+      }
+    }
+  },
+  defaultVariants: {
+    active: false
+  }
+});
