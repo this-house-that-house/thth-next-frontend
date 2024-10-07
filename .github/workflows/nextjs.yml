@@ -75,6 +75,12 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: export LC_CTYPE=C
+        run: export LC_CTYPE=C
+      - name: fonts basepath
+        run: find ./out -type f -exec sed -i '' 's|/fonts/|/thth-next-frontend/fonts/|g' {} +
+      - name: basepath /imgs/
+        run: find ./out -type f -exec sed -i '' 's|/imgs/|/thth-next-frontend/imgs/|g' {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
