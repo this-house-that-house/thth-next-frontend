@@ -149,6 +149,25 @@ export const [themeClass, vars] = createTheme({
       fontWeight: "700",
       lineHeight: "120%",
     },
+    introTitle: {
+      fontFamily: "Pretendard-SemiBold",
+      fontWeight: "600",
+      fontSize: "30px",
+      lineHeight: "130%",
+      letterSpacing: "-2.5%",
+      whiteSpace: "pre-line",
+      textAlign: "center",
+    },
+    introDesc: {
+      fontFamily: "Pretendard-Regular",
+      fontWeight: "500",
+      fontSize: "16px",
+      lineHeight: "150%",
+      letterSpacing: "-2.5%",
+      whiteSpace: "pre-line",
+      textAlign: "center",
+      color: "#666666",
+    },
   },
 });
 
@@ -508,7 +527,6 @@ export const textArea = style({
 });
 
 export const slider = style({
-  position: "relative",
   width: "100%",
   padding: 0,
   overflow: "hidden",
@@ -527,12 +545,7 @@ export const sliderItemWrapper = style({
   alignItems: "center",
 });
 
-export const sliderLinks = style({
-  position: "absolute",
-  bottom: "5%",
-  left: "50%",
-  transform: "translateX(-50%)",
-});
+export const sliderLinks = style({});
 
 export const sliderLink = recipe({
   base: {
