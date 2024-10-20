@@ -1,3 +1,4 @@
+"use client";
 
 import Link from 'next/link';
 import * as Styles from '../components/index.css';
@@ -5,6 +6,13 @@ import RedHouseIcon from '../svgs/red-house.svg';
 import YellowHouseIcon from '../svgs/yellow-house.svg';
 
 export default function () {
+
+  function kakaoLogin() {
+    window.Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:3000/login/kakao',
+    });
+  }
+
   return (
     <div className={Styles.center} style={{
       display: 'flex',
@@ -32,10 +40,13 @@ export default function () {
       }}>
         대학가 자취방, <br />이제 똑똑하게 비교하며 고르세요!
       </span>
-      <img src="/imgs/kakao_login_large_wide.png" style={{
-        width: '100%',
-        marginBottom: 57
-      }} />
+      <img
+        src="/imgs/kakao_login_large_wide.png"
+        onClick={kakaoLogin}
+        style={{
+          width: '100%',
+          marginBottom: 57
+        }} />
       <Link href='/home' style={{
         ...Styles.vars.font.bodyM16,
         color: '#989898',
