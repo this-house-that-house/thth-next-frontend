@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import * as Styles from './components/index.css';
 import Button from './components/Button';
 import Carousel from './components/Carousel';
+import { TOKEN_KEY_NAME } from '/app/constants/auth'
 
 export default function () {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function () {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem(TOKEN_KEY_NAME);
     const isVisited = localStorage.getItem('isVisited');
     if (token) {
       router.push('/home');
