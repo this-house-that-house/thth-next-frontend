@@ -5,7 +5,7 @@ import { TOKEN_KEY_NAME } from '/app/constants/auth'
 
 const apiClient = axios.create()
 
-apiClient.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL
+apiClient.defaults.baseURL = process.env.NEXT_PUBLIC_API_BASE_URL
 apiClient.defaults.headers.common['Content-Type'] = 'application/json'
 if (typeof window !== 'undefined') {
   apiClient.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem(TOKEN_KEY_NAME)}`

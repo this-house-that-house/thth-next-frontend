@@ -6,10 +6,9 @@ import RedHouseIcon from '../svgs/red-house.svg';
 import YellowHouseIcon from '../svgs/yellow-house.svg';
 
 export default function () {
-
   function kakaoLogin() {
     window.Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:3000/login/kakao',
+      redirectUri: `${process.env.NEXT_PUBLIC_BASE_URL}/login/kakao`,
     });
   }
 
