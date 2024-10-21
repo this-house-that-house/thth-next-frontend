@@ -7,6 +7,9 @@ import YellowHouseIcon from '../svgs/yellow-house.svg';
 
 export default function () {
   function kakaoLogin() {
+    console.log(`base url : ${process.env.NEXT_PUBLIC_BASE_URL}`);
+    console.log(`api base url : ${process.env.NEXT_PUBLIC_API_BASE_URL}`);
+    console.log(`kakao js : ${process.env.NEXT_PUBLIC_KAKAO_JS_KEY}`);
     window.Kakao.Auth.authorize({
       redirectUri: `${process.env.NEXT_PUBLIC_BASE_URL}/login/kakao`,
     });
