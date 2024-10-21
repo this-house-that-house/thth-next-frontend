@@ -1,6 +1,7 @@
 import "./globals.css";
 import { themeClass } from "./components/index.css";
 import KakaoInit from "./components/KakaoInit";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "이집저집",
@@ -10,10 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <KakaoInit />
-      <body className={themeClass}>
-        {children}
-      </body>
+      <Suspense fallback={null}>
+        <KakaoInit />
+        <body className={themeClass}>
+          {children}
+        </body>
+      </Suspense>
     </html>
   );
 }
