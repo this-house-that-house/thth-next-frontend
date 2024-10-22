@@ -25,10 +25,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  environment:
-    name: github-pages
   # Build job
   build:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
