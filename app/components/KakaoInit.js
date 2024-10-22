@@ -3,7 +3,6 @@ import Script from 'next/script';
 
 export default function () {
   const onLoad = () => {
-    console.log(`kakao js : ${process.env.NEXT_PUBLIC_KAKAO_JS_KEY}`);
     try {
       window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JS_KEY);
     }
