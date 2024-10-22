@@ -16,7 +16,7 @@ export default function () {
     async (code) => {
       const res = await reqAuth({
         code,
-        redirect_uri: 'http://localhost:3000/login/kakao',
+        redirect_uri: `${process.env.NEXT_PUBLIC_BASE_URL}/login/kakao`,
       })
       if (res.status === 200) {
         localStorage.setItem(TOKEN_KEY_NAME, res.data.token);
