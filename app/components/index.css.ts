@@ -644,7 +644,7 @@ export const imagePlaceholder = style({
 export const floatingTopBar = style({
   position: "absolute",
   width: "100%",
-  padding: "14px 16px 0px",
+  padding: "14px 16px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between"
@@ -657,12 +657,15 @@ export const transparent = style({
 export const collage = style({
   display: "flex",
   width: "100%",
-  height: "228px"
+  minHeight: "228px"
 });
 
 export const tabs = style({
   display: "flex",
-  width: "100%"
+  width: "100%",
+  position: "sticky",
+  backgroundColor: "white",
+  top: 44
 });
 
 export const tab = recipe({
@@ -720,8 +723,8 @@ export const divider = recipe({
   },
   variants: {
     size: {
-      small: { height: 2 },
-      large: { height: 8 }
+      small: { minHeight: 2 },
+      large: { minHeight: 8 }
     }
   },
   defaultVariants: {
@@ -732,6 +735,7 @@ export const divider = recipe({
 export const ReviewsContainer = style({
   display: "flex",
   flexDirection: "column",
+  flex: 1,
   gap: 20,
   padding: "29px 16px 0"
 });

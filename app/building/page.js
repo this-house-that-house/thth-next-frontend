@@ -12,6 +12,8 @@ import Reviews from './reviews'
 
 export default function () {
   const [selectedTab, setSelectedTab] = useState(0);
+  const [topBarColor, setTopBarColor] = useState('#ffffff00');
+
   const tabs = [
     {
       id: 0,
@@ -46,12 +48,19 @@ export default function () {
     "average_noise": 3,
     "image": "https://cnfyuagrxxfh.compat.objectstorage.ap-seoul-1.oraclecloud.com/bucket-20241002-1716/images/9c74f006-d65e-4a5e-bfc6-326ac889e7c8.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=a9baa9595cdaf21197299c31871a7e9732a96eeb%2F20241028%2Fap-seoul-1%2Fs3%2Faws4_request&X-Amz-Date=20241028T020916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=df4edc90b16bb310967a0d8b6ecbfbfe79af82cf1e31802154c651aa135b847a"
   }
+  const scrollHandler = (e) => {
+    const scroll = e.target.scrollTop;
+    if (scroll < 100) {
+      setTopBarColor(`#ffffff${Math.floor(scroll / 100 * 255).toString(16)}`);
+    } else {
+      setTopBarColor(`#ffffff${Math.floor(255).toString(16)}`);
+    }
+  }
   return (
     <>
-      <div className={Styles.container}>
-
+      <div className={Styles.container} onScroll={scrollHandler}>
         {/* 상단 바 */}
-        <div className={Styles.floatingTopBar}>
+        <div className={Styles.floatingTopBar} style={{ backgroundColor: topBarColor }}>
           <BackwardButton />
         </div>
         {/* 콜라주 */}
