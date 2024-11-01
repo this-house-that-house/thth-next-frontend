@@ -768,3 +768,20 @@ export const square = recipe({
     size: "small"
   }
 });
+
+export const topBar = style({
+  width: "100%",
+  padding: "14px 16px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between"
+});
+
+export const LinkItem = style({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  textDecoration: "none",
+  padding: "20px 16px",
+  ...vars.font.bodyM14
+});
