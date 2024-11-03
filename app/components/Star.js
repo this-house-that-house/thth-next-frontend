@@ -15,13 +15,15 @@ export default function ({ rating }) {
       <span style={{ ...Styles.vars.font.bodyM16, color: Styles.vars.color.gray[900] }}>
         {rating}
       </span>
-      {
-        new Array(5).fill().map((_, i) => {
-          if (i < full) return <StarFullIcon key={i} />;
-          if (i < full + half) return <StarHalfIcon key={i} />;
-          return <StarEmptyIcon key={i} />
-        })
-      }
+      <div>
+        {
+          new Array(5).fill().map((_, i) => {
+            if (i < full) return <StarFullIcon key={i} />;
+            if (i < full + half) return <StarHalfIcon key={i} />;
+            return <StarEmptyIcon key={i} />
+          })
+        }
+      </div>
     </div>
   )
 }

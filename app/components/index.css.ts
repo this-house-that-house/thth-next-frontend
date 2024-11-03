@@ -172,6 +172,8 @@ export const [themeClass, vars] = createTheme({
 });
 
 export const container = style({
+  display: "flex",
+  flexDirection: "column",
   width: "100%",
   flex: 1,
   overflowY: "auto",
@@ -475,6 +477,22 @@ export const checkWrapper = recipe({
           },
         },
       },
+      rectangle: {
+        display: "flex",
+        padding: "10px 14px",
+        backgroundColor: vars.color.gray[100],
+        border: `1.5px solid ${vars.color.gray[100]}`,
+        borderRadius: vars.borderRadius,
+        color: vars.color.gray[900],
+        ...vars.font.bodyM14,
+        selectors: {
+          "&:has(input[type=checkbox]:checked)": {
+            backgroundColor: "#FFF2F2",
+            borderColor: vars.color.primary.lighten[200],
+            color: vars.color.primary[100],
+          },
+        },
+      },
       tag: {
         padding: "10px 14px",
         borderRadius: vars.borderRadius,
@@ -694,4 +712,65 @@ export const bottomBar = style({
   gap: "12px",
   padding: "13px 16px 30px",
   boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.08)",
+});
+
+export const houseBasicInfoContainer = style({
+  width: "100%",
+  padding: "24px 16px",
+  background: "white",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "end",
+});
+
+export const divider = recipe({
+  base: {
+    width: "100%",
+    backgroundColor: vars.color.gray[100],
+  },
+  variants: {
+    size: {
+      small: { height: 2 },
+      large: { height: 8 },
+    },
+  },
+  defaultVariants: {
+    size: "small",
+  },
+});
+
+export const ReviewsContainer = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 20,
+  padding: "29px 16px 0",
+});
+
+export const descriptionPreview = style({
+  width: 287,
+  display: "-webkit-box",
+  textOverflow: "ellipsis",
+  overflow: "hidden",
+  WebkitBoxOrient: "vertical",
+  WebkitLineClamp: 3,
+  color: vars.color.gray[800],
+  ...vars.font.bodyR14,
+});
+
+export const square = recipe({
+  base: {
+    width: 100,
+    height: 100,
+    borderRadius: vars.borderRadius,
+    backgroundColor: vars.color.gray[100],
+  },
+  variants: {
+    size: {
+      small: { width: 100, height: 100 },
+      medium: { width: 150, height: 150 },
+    },
+  },
+  defaultVariants: {
+    size: "small",
+  },
 });
