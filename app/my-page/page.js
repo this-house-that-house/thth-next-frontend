@@ -10,7 +10,7 @@ export default function () {
   }
   return (
     <>
-      <div className={Styles.topBar} style={{ boxShadow: 'none' }}>
+      <div className={Styles.topBar}>
         <h1 style={{ ...Styles.vars.font.headingSB22 }}>마이 페이지</h1>
       </div>
       <LinkItem href={""} title="구름님 안녕하세요!" description="inhaGoorm@naver.com" icon={false} />

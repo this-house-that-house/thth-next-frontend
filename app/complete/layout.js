@@ -4,7 +4,7 @@ import { container, topBar } from "../components/index.css"
 export default function ({ children }) {
   return (
     <>
-      <div className={topBar} style={{ justifyContent: 'start', boxShadow: 'none' }}>
+      <div className={topBar} style={{ justifyContent: 'start' }}>
         <BackwardButton />
       </div>
       <div className={container}>
