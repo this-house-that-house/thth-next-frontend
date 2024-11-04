@@ -19,7 +19,7 @@ export default function () {
       <div className={Styles.divider()} />
       <LinkItem href={""} title="작성한 실거주 리뷰" icon={false} />
       <div className={Styles.divider()} />
-      <LinkItem href={""} title="나의 위시리스트" icon={false} />
+      <LinkItem href={"/my-page/wishlist"} title="나의 위시리스트" />
       <div className={Styles.divider({ size: 'large' })} />
       <LinkItem href={"/login"} title="로그아웃" icon={false} onClick={logout} />
       <div className={Styles.divider()} />

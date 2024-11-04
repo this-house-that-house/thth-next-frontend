@@ -12,7 +12,7 @@ import { icon } from "./index.css";
 
 export default function () {
   const pathname = usePathname() || ROUTES.HOME;
-  const isSamePath = (path) => pathname === path;
+  const isSamePath = (path) => pathname === path || pathname.startsWith(path);
 
   const navs = [
     { name: "이집저집", path: ROUTES.HOME, Icon: Home },
