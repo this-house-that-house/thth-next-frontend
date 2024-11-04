@@ -192,7 +192,7 @@ export default function () {
                       image={item.image}
                       description={item.description}
                       like={item.like}
-                      size={'small'}
+                      size={'middle'}
                     />
                   ))
                 }
