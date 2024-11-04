@@ -26,7 +26,7 @@ export default function ({ onDone }) {
     "경비원",
     "엘레베이터",
     "옥상 출입가능",
-    "업어도 괜찮아요"
+    "없어도 괜찮아요"
   ]
   return (
     <>
