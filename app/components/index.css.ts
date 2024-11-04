@@ -273,7 +273,7 @@ export const searchWrapper = style({
   padding: "11px 14px",
   borderRadius: 29,
   border: `2px solid ${vars.color.gray[300]}`,
-  backgroundColor: "transparent"
+  backgroundColor: vars.color.gray[50]
 });
 
 export const search = style({
@@ -281,6 +281,7 @@ export const search = style({
   flex: 1,
   border: `none`,
   outline: "none",
+  backgroundColor: "transparent",
   ...vars.font.bodyR14
 });
 
@@ -698,13 +699,22 @@ export const center = style({
   alignItems: "center"
 });
 
+export const topBar = style({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  height: "78px",
+  padding: "16px",
+  boxShadow: "0px 4px 10px 0px rgba(24, 24, 27, 0.07)"
+});
+
 export const bottomBar = style({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   gap: "12px",
   padding: "13px 16px 30px",
-  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)"
+  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.08)"
 });
 
 export const houseBasicInfoContainer = style({
