@@ -424,7 +424,8 @@ export const checkWrapper = recipe({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: 8
+    gap: 8,
+    minWidth: "max-content"
   },
   variants: {
     variant: {
@@ -779,14 +780,6 @@ export const square = recipe({
   }
 });
 
-export const topBar = style({
-  width: "100%",
-  padding: "14px 16px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between"
-});
-
 export const LinkItem = style({
   display: "flex",
   justifyContent: "space-between",
@@ -794,4 +787,75 @@ export const LinkItem = style({
   textDecoration: "none",
   padding: "20px 16px",
   ...vars.font.bodyM14
+});
+
+export const myStyleContainer = style({
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  flex: 1,
+  overflowY: "auto",
+  padding: "0 16px",
+  gap: 28
+});
+
+export const questionContainer = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 14
+});
+
+export const progressContainer = style({
+  position: "relative",
+  height: 3,
+  width: "100%",
+  backgroundColor: vars.color.gray[300],
+  borderRadius: 1.5
+});
+
+export const textInputContainer = style({
+  display: "flex",
+  gap: 8,
+  borderRadius: vars.borderRadius,
+  border: `2px solid ${vars.color.gray[300]}`,
+  backgroundColor: vars.color.gray[100],
+  padding: "11px 14px",
+  minWidth: 0
+});
+
+export const textInput = style({
+  flex: 1,
+  border: "none",
+  outline: "none",
+  backgroundColor: "transparent",
+  minWidth: 0,
+  ...vars.font.bodyR14
+});
+
+export const textInputUnit = style({
+  color: vars.color.gray[900],
+  ...vars.font.bodyR14
+});
+
+export const dash = style({
+  width: 8,
+  height: 2,
+  borderRadius: 1,
+  backgroundColor: vars.color.gray[900]
+});
+
+export const rangeInputContainer = style({
+  display: "flex",
+  width: "100%",
+  gap: 13,
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+export const toggleContainer = style({
+  display: "flex",
+  gap: 6,
+  justifyContent: "start",
+  alignItems: "center",
+  flexWrap: "wrap"
 });

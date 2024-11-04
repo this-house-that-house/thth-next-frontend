@@ -10,12 +10,12 @@ export default function () {
   }
   return (
     <>
-      <div className={Styles.topBar}>
+      <div className={Styles.topBar} style={{ boxShadow: 'none' }}>
         <h1 style={{ ...Styles.vars.font.headingSB22 }}>마이 페이지</h1>
       </div>
       <LinkItem href={""} title="구름님 안녕하세요!" description="inhaGoorm@naver.com" icon={false} />
       <div className={Styles.divider({ size: "large" })} />
-      <LinkItem href={""} title="나의 자취방 스타일 설정하기" />
+      <LinkItem href={"/my-style"} title="나의 자취방 스타일 설정하기" />
       <div className={Styles.divider()} />
       <LinkItem href={""} title="작성한 실거주 리뷰" icon={false} />
       <div className={Styles.divider()} />
