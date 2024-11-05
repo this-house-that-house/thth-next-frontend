@@ -8,12 +8,12 @@ export default function ({ title, description, children, open }) {
   return (
     <>
       <div className={accordionLayout}>
-        <div className={accordionTitle}>
+        <div className={accordionTitle} onClick={toggle}>
           <div className={accordionInfo}>
             <span style={{ ...vars.font.bodyM18, color: vars.color.gray[900] }}>{title}</span>
             <span style={{ ...vars.font.bodyM14, color: vars.color.gray[400] }}>{description}</span>
           </div>
-          <button className={iconBtn} onClick={toggle}>
+          <button className={iconBtn}>
             <ArrowUpIcon style={{ transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)', transition: 'transform 0.25s' }} />
           </button>
         </div>
