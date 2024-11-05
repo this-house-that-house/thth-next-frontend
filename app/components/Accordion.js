@@ -13,7 +13,7 @@ export default function ({ title, description, children, open }) {
             <span style={{ ...vars.font.bodyM18, color: vars.color.gray[900] }}>{title}</span>
             <span style={{ ...vars.font.bodyM14, color: vars.color.gray[400] }}>{description}</span>
           </div>
-          <button className={iconBtn}>
+          <button type="button" className={iconBtn}>
             <ArrowUpIcon style={{ transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)', transition: 'transform 0.25s' }} />
           </button>
         </div>
