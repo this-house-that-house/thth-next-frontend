@@ -959,3 +959,48 @@ export const compareMemoLayout = style({
   alignItems: "center",
   textAlign: "center"
 });
+
+export const editChecklistLayout = style({
+  display: "flex",
+  flexDirection: "column"
+});
+
+export const titleInput = style({
+  outline: "none",
+  display: "flex",
+  gap: 8,
+  padding: "0px 20px",
+  border: "none",
+  background: "transparent",
+  marginBottom: 40,
+  ...vars.font.headingSB22,
+  selectors: {
+    "&::placeholder": {
+      color: vars.color.gray[400]
+    }
+  }
+});
+
+export const accordionLayout = style({
+  display: "flex",
+  flexDirection: "column",
+  padding: "18px 16px"
+});
+
+export const accordionTitle = style({
+  display: "flex",
+  gap: 8,
+  alignItems: "center"
+});
+
+export const accordionInfo = style({
+  display: "flex",
+  flex: 1,
+  flexDirection: "column",
+  gap: 3
+});
+
+export const accordionItem = style({
+  display: "grid",
+  transition: "250ms grid-template-rows ease"
+});
