@@ -33,7 +33,8 @@ export const [themeClass, vars] = createTheme({
     lightYellow: "#FFEFB2",
     orange: "#FFAB45",
     green: "#5DD763",
-    lightGreen: "#E0FBDD"
+    lightGreen: "#E0FBDD",
+    blue: "#3590FF"
   },
   borderRadius: "10px",
   font: {
@@ -228,7 +229,11 @@ export const button = recipe({
       secondary: { backgroundColor: vars.color.gray[200] },
       yellow: { backgroundColor: vars.color.yellow },
       orange: { backgroundColor: vars.color.orange },
-      green: { backgroundColor: vars.color.green }
+      green: { backgroundColor: vars.color.green },
+      textPrimary: {
+        backgroundColor: "transparent",
+        color: vars.color.primary[100]
+      }
     }
   },
   defaultVariants: {
@@ -452,6 +457,7 @@ export const checkWrapper = recipe({
         }
       },
       box: {
+        justifyContent: "start",
         padding: "18px",
         backgroundColor: "white",
         border: `1.5px solid white`,
@@ -903,4 +909,53 @@ export const checklistCompareButton = style({
   outline: "none",
   border: "none",
   margin: "auto 0 0 auto"
+});
+
+export const checklistComparePageLayout = style({
+  display: "flex",
+  flex: 1,
+  flexDirection: "column",
+  gap: 30,
+  padding: "30px 16px"
+});
+
+export const compareListLayout = style({
+  display: "grid",
+  gridTemplateColumns: "min-content 1fr min-content",
+  rowGap: 4,
+  padding: "14px 90px",
+  backgroundColor: vars.color.gray[100],
+  borderRadius: vars.borderRadius,
+  justifyContent: "space-between",
+  textAlign: "center"
+});
+
+export const compareListItemName = style({
+  ...vars.font.bodyM14
+});
+
+export const centerWrapper = style({
+  width: 0,
+  overflow: "visible",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+export const verticalDivider = style({
+  width: 1,
+  height: "100%",
+  border: `1px dashed ${vars.color.gray[300]}`
+});
+
+export const compareMemoLayout = style({
+  display: "grid",
+  gridTemplateColumns: "1fr min-content 1fr",
+  rowGap: 4,
+  padding: "12px 38px",
+  backgroundColor: vars.color.gray[100],
+  borderRadius: vars.borderRadius,
+  justifyContent: "space-between",
+  alignItems: "center",
+  textAlign: "center"
 });
