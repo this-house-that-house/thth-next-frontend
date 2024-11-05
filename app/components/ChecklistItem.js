@@ -4,7 +4,7 @@ import EditIcon from '../svgs/edit.svg';
 
 export default function ({ title, id, style, ...props }) {
   return (
-    <Link className={checklistItem} href={`/checklist/${id}`} style={{
+    <Link className={checklistItem} href={`/checklist?id=${id}`} style={{
       textDecoration: 'none',
       ...style
     }} {...props}>

@@ -431,7 +431,8 @@ export const checkWrapper = recipe({
     alignItems: "center",
     justifyContent: "center",
     gap: 8,
-    minWidth: "max-content"
+    minWidth: "max-content",
+    width: "fit-content"
   },
   variants: {
     variant: {
