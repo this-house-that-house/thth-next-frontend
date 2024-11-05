@@ -1005,3 +1005,35 @@ export const accordionItem = style({
   display: "grid",
   transition: "250ms grid-template-rows ease"
 });
+
+export const rangeContainer = style({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  gap: 4,
+  padding: "0px 8px"
+});
+
+export const rangeHorizontalBar = style({
+  position: "relative",
+  width: "100%",
+  height: 4,
+  margin: "20px 25px",
+  backgroundColor: vars.color.gray[100],
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center"
+});
+
+export const rangeCheck = style({
+  position: "absolute",
+  top: "50%",
+  transform: "translate(-50%, -50%)"
+});
+
+export const checklistWrapper = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 16
+});

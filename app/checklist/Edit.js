@@ -1,7 +1,9 @@
 import React from 'react'
-import { editChecklistLayout, titleInput, vars } from '../components/index.css'
+import { editChecklistLayout, titleInput, vars, checklistWrapper, tag } from '../components/index.css'
 import Accordion from '../components/Accordion'
 import Check from '../components/Check'
+import Range from '../components/Range'
+import TextArea from '../components/TextArea'
 
 export default function ({ id }) {
   const data = {
@@ -52,24 +54,34 @@ export default function ({ id }) {
   ]
   const detailTags = [
     {
-      name: "채광",
-      id: "lighting"
+      name: "채광 🌤️",
+      id: "lighting",
+      lowText: "완전 암막",
+      highText: "햇빛 쨍쨍"
     },
     {
-      name: "수압",
-      id: "water_pressure"
+      name: "수압 💧",
+      id: "water_pressure",
+      lowText: "매우 약함",
+      highText: "매우 강함"
     },
     {
-      name: "곰팡이",
-      id: "mold"
+      name: "곰팡이 🍄",
+      id: "mold",
+      lowText: "관리 필요",
+      highText: "매우 깨끗"
     },
     {
-      name: "냉난방",
-      id: "havc"
+      name: "냉난방 🌡️",
+      id: "havc",
+      lowText: "조절 불가",
+      highText: "완벽 온도"
     },
     {
-      name: "주변 소음",
-      id: "noise"
+      name: "주변 소음 📢",
+      id: "noise",
+      lowText: "매우 높음",
+      highText: "완전 방음"
     },
   ]
   const tags = [
@@ -425,11 +437,7 @@ export default function ({ id }) {
         tagCategories.map((category, index) => {
           return (
             <Accordion key={index} title={category.name} description={category.description || ''}>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 16,
-              }}>
+              <div className={checklistWrapper}>
                 {
                   category.subCategories.map((subCategory, index) => {
                     return (
@@ -438,7 +446,9 @@ export default function ({ id }) {
                         {
                           tags.filter(tag => tag.category === subCategory.id).map((tag, index) => {
                             return (
-                              <Check key={tag.id} variant="default" checkboxVisible style={{ marginBottom: 22 }}>{tag.name}</Check>
+                              <Check key={tag.id} variant="default" checkboxVisible>
+                                {tag.name}
+                              </Check>
                             )
                           })
                         }
@@ -451,6 +461,25 @@ export default function ({ id }) {
           )
         })
       }
+      <Accordion title="세부 사항">
+        <div className={checklistWrapper} style={{ gap: 49 }}>
+          {
+            detailTags.map((tag, index) => {
+              return (
+                <div className={checklistWrapper} key={tag.id}>
+                  <span style={{ ...vars.font.bodyM18, color: vars.color.gray[700] }}>
+                    {tag.name}
+                  </span>
+                  <Range lowText={tag.lowText} highText={tag.highText} />
+                </div>
+              )
+            })
+          }
+        </div>
+      </Accordion>
+      <Accordion title="메모">
+        <TextArea style={{ width: '100%', height: 300, resize: 'none' }} />
+      </Accordion>
     </form>
   )
 }
