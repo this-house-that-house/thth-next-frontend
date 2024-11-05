@@ -7,7 +7,7 @@ export default function ({ children }) {
       <div className={container}>
         {children}
       </div>
-      <Nav />
+      <Nav style={{ zIndex: 100 }} />
     </>
   )
 }

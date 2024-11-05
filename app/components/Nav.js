@@ -10,7 +10,7 @@ import Checklist from "../svgs/checklist.svg";
 import MyPage from "../svgs/my-page.svg";
 import { icon } from "./index.css";
 
-export default function () {
+export default function ({ ...props }) {
   const pathname = usePathname() || ROUTES.HOME;
   const isSamePath = (path) => pathname === path || pathname.startsWith(path);
 
@@ -21,7 +21,7 @@ export default function () {
     { name: "마이페이지", path: ROUTES.MY_PAGE, Icon: MyPage }
   ];
   return (
-    <nav>
+    <nav {...props}>
       <ul className={Styles.nav}>
         {navs.map(({ name, path, Icon }) => (
           <li key={path}>

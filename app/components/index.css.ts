@@ -245,7 +245,8 @@ export const nav = style({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "10px 30px 30px 30px",
-  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)"
+  boxShadow: "0px -4px 5px 0px rgba(87, 87, 87, 0.03)",
+  backgroundColor: "white"
 });
 
 export const link = recipe({
@@ -1036,4 +1037,14 @@ export const checklistWrapper = style({
   display: "flex",
   flexDirection: "column",
   gap: 16
+});
+
+export const drawerContainer = style({
+  display: "grid",
+  transition: "250ms grid-template-rows ease",
+  position: "absolute",
+  bottom: 0,
+  width: "100%",
+  backgroundColor: "white",
+  zIndex: 99
 });
