@@ -857,5 +857,50 @@ export const toggleContainer = style({
   gap: 6,
   justifyContent: "start",
   alignItems: "center",
-  flexWrap: "wrap",
+  flexWrap: "wrap"
+});
+
+export const addButton = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: vars.borderRadius,
+  backgroundColor: vars.color.gray[100],
+  outline: "none",
+  border: "none"
+});
+
+export const relative = style({
+  position: "relative"
+});
+
+export const absoluteCenter = style({
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)"
+});
+
+export const checklistItem = style({
+  display: "flex",
+  padding: 18,
+  borderRadius: vars.borderRadius,
+  backgroundColor: "white",
+  boxShadow: "0px 0px 6px 0px rgba(74, 74, 74, 0.20)",
+  border: "none",
+  outline: "none"
+});
+
+export const checklistCompareButton = style({
+  position: "absolute",
+  bottom: 16,
+  right: 16,
+  padding: "10px 20px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: vars.borderRadius,
+  outline: "none",
+  border: "none",
+  margin: "auto 0 0 auto"
 });

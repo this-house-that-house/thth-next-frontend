@@ -2,9 +2,9 @@
 
 import * as Styles from "./index.css";
 
-export default function ({ color, children, ...props }) {
+export default function ({ color, children, className, ...props }) {
   return (
-    <button className={Styles.button({ color })} {...props}>
+    <button className={`${Styles.button({ color })} ${className}`} {...props}>
       {children}
     </button>
   );
