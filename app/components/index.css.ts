@@ -685,7 +685,10 @@ export const collageItem = style({
   width: "100%",
   height: "100%",
   overflow: "hidden",
-  backgroundColor: vars.color.gray[100],
+  backgroundColor: vars.color.gray[200],
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   selectors: {
     "&:nth-child(1)": {
       gridRow: "1 / 3",

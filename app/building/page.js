@@ -13,6 +13,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { reqGetHouse } from "../apis/house";
 import { reqGetReview } from "../apis/review";
+import PlaceHolderIcon from "../svgs/placeholder.svg";
 
 export default function () {
   const router = useRouter();
@@ -79,7 +80,11 @@ export default function () {
           {
             [...new Array(4).fill(true).map((v, i) => reviews?.[i]?.image || '')].map((image, idx) =>
               <div key={idx} className={Styles.collageItem}>
-                {image !== '' && <img src={image} width='100%' height='100%' />}
+                {
+                  image !== '' ?
+                    <img src={image} width='100%' height='100%' /> :
+                    <PlaceHolderIcon />
+                }
               </div>
             )
           }
