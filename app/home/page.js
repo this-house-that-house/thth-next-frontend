@@ -6,75 +6,58 @@ import Search from '../components/Search'
 import ArrowRightIcon from '../svgs/arrow-right-tail.svg'
 import Card from '../components/Card'
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
+import { reqGetUser } from '../apis/user';
+import { reqGetStyle } from '../apis/style';
+import { reqGetReviewStyle } from '../apis/review';
+import { reqGetStyleHouse } from '../apis/house';
 
 export default function () {
-  const name = '구름'
-  const region = '용현동'
-  const recommendList = [
-    {
-      subject: '별점이 높은',
-      list: [
-        {
-          title: '인하주택',
-          image: '',
-          description: '평균 별점 4.7',
-          like: true
-        },
-        {
-          title: '인하주택',
-          image: '',
-          description: '평균 별점 4.7',
-          like: false
-        },
-        {
-          title: '인하주택',
-          image: '',
-          description: '평균 별점 4.7',
-          like: false
-        },
-        {
-          title: '인하주택',
-          image: '',
-          description: '평균 별점 4.7',
-          like: false
-        }
-      ]
-    },
-    {
-      subject: '최근에 리뷰가 달린',
-      list: [{
-        title: '인하주택',
-        image: '',
-        description: '평균 별점 4.7',
-        like: false
-      }, {
-        title: '인하주택',
-        image: '',
-        description: '평균 별점 4.7',
-        like: true
-      }]
-    },
-  ]
-  const styleList = [
-    {
-      title: '인하주택',
-      image: '',
-      description: '평균 별점 4.7',
-      like: true
-    },
-    {
-      title: '인하주택',
-      image: '',
-      description: '평균 별점 4.7',
-      like: true
-    },
-    {
-      title: '인하주택',
-      image: '',
-      description: '평균 별점 4.7',
-      like: true
+  const [name, setName] = useState('구름');
+  const [region, setRegion] = useState('용현동');
+  const [styleList, setStyleList] = useState([]);
+  const [ratingList, setRatingList] = useState([]);
+  const [recentList, setRecentList] = useState([]);
+
+  const getUser = async () => {
+    const res = await reqGetUser();
+    if (res.status === 200) {
+      setName(res.data[0].nickname);
     }
-  ]
+  }
+  const getRegion = async () => {
+    const res = await reqGetStyle();
+    if (res.status === 200) {
+      setRegion(res.data.preferred_area);
+    }
+  }
+  const getStyleList = async () => {
+    const res = await reqGetStyleHouse();
+    if (res.status === 200) {
+      setStyleList(res.data);
+    }
+  }
+  const getRatingList = async () => {
+    const res = await reqGetReviewStyle({ filter: 'rating' });
+    if (res.status === 200) {
+      setRatingList(res.data);
+    }
+  };
+  const getRecentList = async () => {
+    const res = await reqGetReviewStyle();
+    if (res.status === 200) {
+      setRecentList(res.data);
+    }
+  };
+
+
+  useEffect(() => {
+    getUser();
+    getRegion();
+    getStyleList();
+    getRatingList();
+    getRecentList();
+  }, []);
   return (
     <>
       {/* 상단바 */}
@@ -167,38 +150,64 @@ export default function () {
         width: '100%',
         paddingLeft: 16,
       }}>
-        {
-          recommendList.map((recommendItem, index) => (
-            <div key={recommendItem.subject} style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 10,
-              marginBottom: 40
-            }}>
-              <p style={{ ...Styles.vars.font.headingSB18 }}>
-                {recommendItem.subject} <span style={{ color: Styles.vars.color.primary[100] }}>{region}</span> 집이에요!
-              </p>
-              <div style={{
-                display: 'flex',
-                gap: 12,
-                overflowX: 'auto',
-                paddingBottom: 16
-              }}>
-                {
-                  recommendItem.list.map((item, index) => (
-                    <Card
-                      key={index}
-                      title={item.title}
-                      image={item.image}
-                      description={item.description}
-                      like={item.like}
-                      size={'middle'}
-                    />
-                  ))
-                }
-              </div>
-            </div>
-          ))}
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 10,
+          marginBottom: 40
+        }}>
+          <p style={{ ...Styles.vars.font.headingSB18 }}>
+            별점이 높은 <span style={{ color: Styles.vars.color.primary[100] }}>{region}</span> 집이에요!
+          </p>
+          <div style={{
+            display: 'flex',
+            gap: 12,
+            overflowX: 'auto',
+            paddingBottom: 16
+          }}>
+            {
+              ratingList.map((item, index) => (
+                <Card
+                  key={index}
+                  title={item.title}
+                  image={item.image}
+                  description={item.description}
+                  like={item.like}
+                  size={'middle'}
+                />
+              ))
+            }
+          </div>
+        </div>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 10,
+          marginBottom: 40
+        }}>
+          <p style={{ ...Styles.vars.font.headingSB18 }}>
+            최근에 리뷰가 달린 <span style={{ color: Styles.vars.color.primary[100] }}>{region}</span> 집이에요!
+          </p>
+          <div style={{
+            display: 'flex',
+            gap: 12,
+            overflowX: 'auto',
+            paddingBottom: 16
+          }}>
+            {
+              recentList.map((item, index) => (
+                <Card
+                  key={index}
+                  title={item.title}
+                  image={item.image}
+                  description={item.description}
+                  like={item.like}
+                  size={'middle'}
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </>
   )
