@@ -1046,5 +1046,13 @@ export const drawerContainer = style({
   bottom: 0,
   width: "100%",
   backgroundColor: "white",
-  zIndex: 99
+  zIndex: 99,
+  borderRadius: `${vars.borderRadius} ${vars.borderRadius} 0 0`
+});
+
+export const houseSummaryLayout = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 20,
+  padding: "30px 16px"
 });
