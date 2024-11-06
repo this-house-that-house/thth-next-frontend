@@ -856,7 +856,8 @@ export const progressContainer = style({
   height: 3,
   width: "100%",
   backgroundColor: vars.color.gray[300],
-  borderRadius: 1.5
+  borderRadius: 1.5,
+  marginBottom: 28
 });
 
 export const textInputContainer = style({
