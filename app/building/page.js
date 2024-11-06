@@ -27,6 +27,7 @@ export default function () {
   const [topBarColor, setTopBarColor] = useState('#ffffff00');
   const [data, setData] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   const tabs = [
     {
@@ -110,12 +111,16 @@ export default function () {
         }
       </div>
       <div className={Styles.bottomBar}>
-        <button className={Styles.iconBtn} style={{
-          backgroundColor: Styles.vars.color.gray[100],
+        <button onClick={() => setIsLiked(prev => !prev)} className={Styles.iconBtn} style={{
+          backgroundColor: isLiked ? Styles.vars.color.primary.lighten['400/50'] : Styles.vars.color.gray[100],
           padding: 13,
           borderRadius: Styles.vars.borderRadius
         }}>
-          <HeartEmptyIcon fill={Styles.vars.color.gray[300]} />
+          {
+            isLiked
+              ? <HeartFillIcon fill={Styles.vars.color.primary.lighten[100]} />
+              : <HeartEmptyIcon fill={Styles.vars.color.gray[300]} />
+          }
         </button>
         <Button color='primary' style={{ padding: '17px 0px', flex: '1' }}>리뷰 남기기</Button>
       </div>
