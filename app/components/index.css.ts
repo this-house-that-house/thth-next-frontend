@@ -666,9 +666,44 @@ export const transparent = style({
 });
 
 export const collage = style({
-  display: "flex",
+  display: "grid",
   width: "100%",
-  minHeight: "228px"
+  maxWidth: "100%",
+  overflow: "hidden",
+  minHeight: "228px",
+  height: "228px",
+  maxHeight: "228px",
+  gridTemplateRows: "repeat(2, 50%)",
+  gridTemplateColumns: "repeat(4, 25%)",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 2,
+  backgroundColor: "white"
+});
+
+export const collageItem = style({
+  width: "100%",
+  height: "100%",
+  overflow: "hidden",
+  backgroundColor: vars.color.gray[100],
+  selectors: {
+    "&:nth-child(1)": {
+      gridRow: "1 / 3",
+      gridColumn: "1 / 3"
+    },
+    "&:nth-child(2)": {
+      gridRow: "1 / 2",
+      gridColumn: "3 / 5"
+    },
+    "&:nth-child(3)": {
+      gridRow: "2 / 3",
+      gridColumn: "3 / 4"
+    },
+    "&:nth-child(4)": {
+      gridRow: "2 / 3",
+      gridColumn: "4 / 5"
+    }
+  }
 });
 
 export const tabs = style({
