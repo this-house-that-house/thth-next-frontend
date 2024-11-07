@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Star from '../components/Star';
 import Empty from '../components/Empty';
 import React from 'react';
+import Select from '../components/Select';
 
 export default function ({ reviews = [] }) {
   const tagTypes = [
@@ -30,11 +31,11 @@ export default function ({ reviews = [] }) {
                 <span style={{ ...Styles.vars.font.headingSB20 }}>
                   실거주자 리뷰
                 </span>
-                <select>
+                <Select>
                   <option>
                     최신순
                   </option>
-                </select>
+                </Select>
               </div>
               {
                 reviews.map(review => {

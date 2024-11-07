@@ -1095,3 +1095,11 @@ export const houseSummaryLayout = style({
   gap: 20,
   padding: "30px 16px"
 });
+
+export const selectStyle = style({
+  border: "none",
+  outline: "none",
+  backgroundColor: "transparent",
+  color: vars.color.gray[900],
+  ...vars.font.bodyR14
+});
