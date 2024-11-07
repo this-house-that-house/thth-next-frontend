@@ -2,7 +2,7 @@ import { rangeHorizontalBar, rangeCheck, rangeContainer, vars } from './index.cs
 import Check from './Check';
 import { useState } from 'react';
 
-export default function ({ lowText, highText }) {
+export default function ({ lowText, highText, name }) {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className={rangeContainer}>
@@ -12,6 +12,8 @@ export default function ({ lowText, highText }) {
             <Check
               variant="circle"
               key={i}
+              name={name}
+              value={i + 1}
               className={rangeCheck}
               style={{
                 left: `${i * 25}%`,

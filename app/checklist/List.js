@@ -7,43 +7,22 @@ import RedHouseOIcon from '../svgs/red-house-o.svg'
 import ChecklistItem from '../components/ChecklistItem'
 import Button from "../components/Button";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { reqGetChecklist } from "../apis/checklist";
 
 export default function () {
   const router = useRouter()
-  const list = [
-    {
-      id: 1,
-      user: 'user1',
-      title: '인하주택',
-      lighting: 1,
-      water_pressure: 1,
-      mold: 1,
-      havc: 1,
-      noise: 1,
-      tags: [{
-        id: 1,
-        name: '매매',
-        category: 'type'
-      }],
-      memo: '메모1'
-    },
-    {
-      id: 2,
-      user: 'user1',
-      title: '인하주택',
-      lighting: 1,
-      water_pressure: 1,
-      mold: 1,
-      havc: 1,
-      noise: 1,
-      tags: [{
-        id: 1,
-        name: '매매',
-        category: 'type'
-      }],
-      memo: '메모1'
+  const [list, setList] = useState([]);
+  const getList = async () => {
+    const res = await reqGetChecklist();
+    if (res.status === 200) {
+      setList(res.data);
     }
-  ]
+  };
+  useEffect(() => {
+    getList();
+  }, []);
+
   return (
     <div style={{
       display: 'flex',
