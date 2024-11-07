@@ -34,7 +34,7 @@ export default function () {
     {
       id: 0,
       name: "홈",
-      content: <Home />
+      content: <Home house={data} />
     },
     {
       id: 1,

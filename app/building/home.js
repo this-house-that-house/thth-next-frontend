@@ -1,8 +1,11 @@
 import * as Styles from '../components/index.css'
 import QuestionIcon from '../svgs/question-circle.svg'
 import Empty from '../components/Empty'
+import { ResponsiveRadar } from '@nivo/radar'
+import { useEffect, useState } from 'react'
 
-export default function () {
+export default function ({ house = {} }) {
+  const [graphData, setGraphData] = useState([])
   const texts = [
     {
       text: '주변 소음',
@@ -21,6 +24,31 @@ export default function () {
       isHighlight: false
     }
   ]
+  useEffect(() => {
+    if (!Object.keys(house).length) return;
+    setGraphData([
+      {
+        "key": "채광",
+        'house': house.average_lighting || 0,
+      },
+      {
+        "key": "곰팡이",
+        'house': house.average_mold || 0,
+      },
+      {
+        "key": "주변소음",
+        'house': house.average_noise || 0,
+      },
+      {
+        "key": "냉난방",
+        'house': house.average_havc || 0,
+      },
+      {
+        "key": "수압",
+        'house': house.average_water_pressure || 0,
+      }
+    ])
+  }, [house])
   return (
     <>
       <div style={{
@@ -42,24 +70,53 @@ export default function () {
           <QuestionIcon />
         </div>
         {
-          true ?
+          false ?
             <Empty text="아직 분석 결과를 볼 수 없어요!" />
-            : <>
+            :
+            <>
               <div className={Styles.center} style={{
                 gap: 39,
                 marginBottom: 22
               }}>
                 <div style={{
-                  backgroundColor: 'red',
-                  width: 206,
-                  height: 172
-                }} />
+                  width: 240,
+                  height: 220
+                }}>
+                  <ResponsiveRadar
+                    data={graphData}
+                    keys={['house']}
+                    indexBy="key"
+                    maxValue={5}
+                    valueFormat=">-.2f"
+                    margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
+                    borderColor="#ff2c2c"
+                    gridShape="linear"
+                    dotSize={10}
+                    dotColor="#ff2c2c"
+                    dotBorderWidth={0}
+                    dotBorderColor="#ff2c2c"
+                    isInteractive={false}
+                    animate={false}
+                    colors={{ scheme: 'set1' }}
+                    fillOpacity={0.15}
+                    text={{
+                      fontSize: 12,
+                      fill: Styles.vars.color.gray[600]
+                    }}
+                    grid={{
+                      line: {
+                        stroke: Styles.vars.color.primary[100],
+                        strokeWidth: 1
+                      }
+                    }}
+                  />
+                </div>
                 <p style={{
                   ...Styles.vars.font.bodyM16,
                   color: Styles.vars.color.gray[900]
                 }}>
                   평균 월세는<br />
-                  100 / 38
+                  {house.average_deposit} / {house.average_monthly_rent}
                 </p>
               </div>
               <span className={Styles.center} style={{
