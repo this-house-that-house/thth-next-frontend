@@ -3,59 +3,21 @@
 import Button from "../components/Button";
 import Check from "../components/Check";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { reqGetChecklist } from "../apis/checklist";
 
 export default function () {
-  const router = useRouter()
-  const list = [
-    {
-      id: 1,
-      user: 'user1',
-      title: '인하주택',
-      lighting: 1,
-      water_pressure: 1,
-      mold: 1,
-      havc: 1,
-      noise: 1,
-      tags: [{
-        id: 1,
-        name: '매매',
-        category: 'type'
-      }],
-      memo: '메모1'
-    },
-    {
-      id: 2,
-      user: 'user1',
-      title: '인하주택',
-      lighting: 1,
-      water_pressure: 1,
-      mold: 1,
-      havc: 1,
-      noise: 1,
-      tags: [{
-        id: 1,
-        name: '매매',
-        category: 'type'
-      }],
-      memo: '메모1'
-    },
-    {
-      id: 3,
-      user: 'user1',
-      title: '인하주택',
-      lighting: 1,
-      water_pressure: 1,
-      mold: 1,
-      havc: 1,
-      noise: 1,
-      tags: [{
-        id: 1,
-        name: '매매',
-        category: 'type'
-      }],
-      memo: '메모1'
+  const router = useRouter();
+  const [list, setList] = useState([]);
+  const getList = async () => {
+    const res = await reqGetChecklist();
+    if (res.status === 200) {
+      setList(res.data);
     }
-  ]
+  };
+  useEffect(() => {
+    getList();
+  }, []);
   const compare = (e) => {
     e.preventDefault();
     const checked = e.target.querySelectorAll('input[type="checkbox"]:checked');
@@ -87,7 +49,7 @@ export default function () {
       }}>
         {
           list.map((item, index) => (
-            <Check key={item.id} variant="box" checkboxVisible item-id={item.id}>
+            <Check key={item.id} variant="box" checkboxVisible item-id={item.id} style={{ width: '100%' }} >
               {item.title}
             </Check>
           ))
