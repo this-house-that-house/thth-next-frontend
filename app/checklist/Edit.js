@@ -8,8 +8,10 @@ import { useEffect, useState } from 'react'
 import { reqGetChecklist } from '../apis/checklist'
 import { reqGetTag } from '../apis/tag'
 import { reqPatchChecklist, reqPostChecklist } from '../apis/checklist'
+import { useRouter } from 'next/navigation'
 
 export default function ({ id }) {
+  const router = useRouter();
   const [data, setData] = useState({});
   const [tags, setTags] = useState([]);
   const getTags = async () => {
@@ -101,7 +103,7 @@ export default function ({ id }) {
     let res;
     if (id === '-1') res = await reqPostChecklist(data);
     else res = await reqPatchChecklist({ id, ...data });
-    if (res.status === 200) {
+    if (res.status === 200 || res.status === 201) {
       alert('저장되었습니다');
       router.push('/checklist');
     }
@@ -127,7 +129,7 @@ export default function ({ id }) {
                         {
                           tags.filter(tag => tag.category === subCategory.id).map((tag, index) => {
                             return (
-                              <Check key={tag.id} variant="default" checkboxVisible name="tag_ids" value={tag.id}>
+                              <Check key={tag.id} variant="default" checkboxVisible name="tag_ids" value={tag.id} defaultChecked={data.tags?.some?.(t => t.id === tag.id)}>
                                 {tag.name}
                               </Check>
                             )
@@ -151,7 +153,7 @@ export default function ({ id }) {
                   <span style={{ ...vars.font.bodyM18, color: vars.color.gray[700] }}>
                     {tag.name}
                   </span>
-                  <Range lowText={tag.lowText} highText={tag.highText} name={tag.id} />
+                  <Range lowText={tag.lowText} highText={tag.highText} name={tag.id} defaultValue={data[tag.id]} />
                 </div>
               )
             })
@@ -159,7 +161,7 @@ export default function ({ id }) {
         </div>
       </Accordion>
       <Accordion title="메모">
-        <TextArea style={{ width: '100%', height: 300, resize: 'none' }} name="memo" />
+        <TextArea style={{ width: '100%', height: 300, resize: 'none' }} name="memo" defaultValue={data.memo} />
       </Accordion>
     </form>
   )

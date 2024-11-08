@@ -1,9 +1,14 @@
+"use client";
+
 import { rangeHorizontalBar, rangeCheck, rangeContainer, vars } from './index.css';
 import Check from './Check';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function ({ lowText, highText, name }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function ({ lowText, highText, name, defaultValue }) {
+  const [activeIndex, setActiveIndex] = useState(defaultValue || 3);
+  useEffect(() => {
+    setActiveIndex(defaultValue || 3);
+  }, [defaultValue]);
   return (
     <div className={rangeContainer}>
       <div className={rangeHorizontalBar}>
@@ -20,8 +25,8 @@ export default function ({ lowText, highText, name }) {
                 width: 24 + (Math.abs(i - 2) * 6),
                 height: 24 + (Math.abs(i - 2) * 6)
               }}
-              checked={activeIndex === i}
-              onChange={() => setActiveIndex(i)}
+              checked={activeIndex === i + 1}
+              onChange={() => setActiveIndex(i + 1)}
             >
               {i + 1}
             </Check>
