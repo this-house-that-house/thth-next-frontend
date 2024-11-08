@@ -854,10 +854,10 @@ export const questionContainer = style({
 export const progressContainer = style({
   position: "relative",
   height: 3,
-  width: "100%",
+  width: "calc(100%-32px)",
   backgroundColor: vars.color.gray[300],
   borderRadius: 1.5,
-  marginBottom: 28
+  margin: "0 16px 28px"
 });
 
 export const textInputContainer = style({
@@ -1102,4 +1102,78 @@ export const selectStyle = style({
   backgroundColor: "transparent",
   color: vars.color.gray[900],
   ...vars.font.bodyR14
+});
+
+export const reviewIntroLayout = style({
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  height: "100%"
+});
+
+export const reviewIntroContent = style({
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,
+  gap: 50,
+  padding: "15px 0 0 39px"
+});
+
+export const reviewIntroTitle = style({
+  padding: "0 4px",
+  color: vars.color.gray[900],
+  ...vars.font.headingSB24
+});
+
+export const progressIntroLayout = style({
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  gap: 45
+});
+
+export const progressIntroVerticalBar = style({
+  position: "absolute",
+  top: 0,
+  left: 15 - 2,
+  width: 0,
+  border: `1px dashed ${vars.color.primary.lighten[400]}`,
+  height: "100%",
+  zIndex: -1
+});
+
+export const progressStepLayout = style({
+  display: "flex",
+  gap: 47
+});
+
+export const progressStepIndex = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: 30,
+  height: 30,
+  borderRadius: vars.borderRadius,
+  backgroundColor: vars.color.gray[50],
+  color: vars.color.primary[100],
+  border: `2px solid ${vars.color.primary.lighten[200]}`,
+  ...vars.font.bodyM16,
+  selectors: {
+    "*:last-child > &": {
+      borderColor: vars.color.primary[100],
+      backgroundColor: vars.color.primary[100],
+      color: vars.color.gray[50]
+    }
+  }
+});
+
+export const progressStepContent = style({
+  color: vars.color.gray[900],
+  ...vars.font.headingSB18
+});
+
+export const progressIntroComplete = style({
+  color: vars.color.primary[100],
+  ...vars.font.headingSB18
 });
