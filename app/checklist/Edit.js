@@ -110,8 +110,10 @@ export default function ({ id }) {
   }
 
   useEffect(() => {
-    getTags();
-    if (id && id !== '-1') getChecklist({ id });
+    (async () => {
+      if (id && id !== '-1') await getChecklist();
+      await getTags();
+    })();
   }, []);
   return (
     <form id="checklist" className={editChecklistLayout} onSubmit={onSubmitHandler}>
