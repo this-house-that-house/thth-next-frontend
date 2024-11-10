@@ -116,7 +116,7 @@ export default function ({ house = {} }) {
                   color: Styles.vars.color.gray[900]
                 }}>
                   평균 월세는<br />
-                  {house.average_deposit} / {house.average_monthly_rent}
+                  {house.average_deposit?.toFixed(0)} / {house.average_monthly_rent?.toFixed(0)}
                 </p>
               </div>
               <span className={Styles.center} style={{

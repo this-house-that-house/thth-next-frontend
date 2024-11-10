@@ -7,7 +7,7 @@ import StarEmptyIcon from "../svgs/star-empty.svg"
 import StarFullIconBig from "../svgs/star-full-big.svg"
 import StarHalfIconBig from "../svgs/star-half-big.svg"
 import StarEmptyIconBig from "../svgs/star-empty-big.svg"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function ({ rating, input = false }) {
   const [value, setValue] = useState(rating);
@@ -15,6 +15,10 @@ export default function ({ rating, input = false }) {
   const full = Number(Math.floor(value));
   const half = Number(value % 1 >= 0.5);
 
+  useEffect(() => {
+    if (isNaN(rating)) return;
+    setValue(rating.toFixed(1));
+  }, [rating]);
   return (
     <div style={{
       display: 'flex',
@@ -23,7 +27,7 @@ export default function ({ rating, input = false }) {
       {
         !input &&
         <span style={{ ...Styles.vars.font.bodyM16, color: Styles.vars.color.gray[900] }}>
-          {rating}
+          {value}
         </span>
       }
       <div
@@ -33,6 +37,7 @@ export default function ({ rating, input = false }) {
         }}
         ref={dragRef}
         onClick={e => {
+          if (!input) return;
           const target = dragRef.current;
           const rect = target.getBoundingClientRect();
           const offsetX = event.clientX - rect.left;
