@@ -8,11 +8,11 @@ import { reqGetHouse } from "../apis/house";
 
 export default function ({ children }) {
   const params = useSearchParams();
-  const id = params.get('id');
+  const houseId = params.get('houseId');
   const step = +params.get('step');
   const [data, setData] = useState({});
   const getHouse = async () => {
-    const res = await reqGetHouse({ id });
+    const res = await reqGetHouse({ id: houseId });
     if (res.status === 200) {
       setData(res.data);
     }

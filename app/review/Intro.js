@@ -9,6 +9,7 @@ import { useSearchParams } from 'next/navigation';
 export default function () {
   const params = useSearchParams();
   const id = params.get('id');
+  const houseId = params.get('houseId');
   return (
     <div className={reviewIntroLayout}>
       <div className={reviewIntroContent}>
@@ -23,7 +24,7 @@ export default function () {
         ]}
         />
       </div>
-      <Link href={`/review?id=${id}&step=1`} style={{ textDecoration: 'none' }}>
+      <Link href={`/review?houseId=${houseId}&id=${id}&step=1`} style={{ textDecoration: 'none' }}>
         <Button variant="primary" style={{ width: '100%' }}>다음</Button>
       </Link>
     </div>

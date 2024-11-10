@@ -854,7 +854,7 @@ export const questionContainer = style({
 export const progressContainer = style({
   position: "relative",
   height: 3,
-  width: "calc(100%-32px)",
+  width: "calc(100% - 32px)",
   backgroundColor: vars.color.gray[300],
   borderRadius: 1.5,
   margin: "0 16px 28px"
@@ -1096,12 +1096,29 @@ export const houseSummaryLayout = style({
   padding: "30px 16px"
 });
 
-export const selectStyle = style({
-  border: "none",
-  outline: "none",
-  backgroundColor: "transparent",
-  color: vars.color.gray[900],
-  ...vars.font.bodyR14
+export const selectStyle = recipe({
+  base: {
+    color: vars.color.gray[900],
+    ...vars.font.bodyR14
+  },
+  variants: {
+    variant: {
+      transparent: {
+        border: "none",
+        outline: "none",
+        backgroundColor: "transparent"
+      },
+      gray: {
+        borderRadius: vars.borderRadius,
+        border: `2px solid ${vars.color.gray[300]}`,
+        backgroundColor: vars.color.gray[100],
+        padding: "11px 14px"
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "transparent"
+  }
 });
 
 export const reviewIntroLayout = style({
