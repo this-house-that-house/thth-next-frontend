@@ -199,3 +199,8 @@ body {
   width: 100vw;
   height: 100dvh;
 }
+
+.react-datepicker-wrapper,
+.react-datepicker-wrapper input {
+  width: 100%;
+}

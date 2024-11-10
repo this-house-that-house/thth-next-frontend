@@ -1096,29 +1096,13 @@ export const houseSummaryLayout = style({
   padding: "30px 16px"
 });
 
-export const selectStyle = recipe({
-  base: {
-    color: vars.color.gray[900],
-    ...vars.font.bodyR14
-  },
-  variants: {
-    variant: {
-      transparent: {
-        border: "none",
-        outline: "none",
-        backgroundColor: "transparent"
-      },
-      gray: {
-        borderRadius: vars.borderRadius,
-        border: `2px solid ${vars.color.gray[300]}`,
-        backgroundColor: vars.color.gray[100],
-        padding: "11px 14px"
-      }
-    }
-  },
-  defaultVariants: {
-    variant: "transparent"
-  }
+export const selectStyle = style({
+  color: vars.color.gray[900],
+  ...vars.font.bodyR14,
+  border: "none",
+  outline: "none",
+  backgroundColor: "transparent",
+  appearance: "none"
 });
 
 export const reviewIntroLayout = style({
@@ -1193,4 +1177,22 @@ export const progressStepContent = style({
 export const progressIntroComplete = style({
   color: vars.color.primary[100],
   ...vars.font.headingSB18
+});
+
+export const graySelectStyle = style({
+  borderRadius: vars.borderRadius,
+  border: `2px solid ${vars.color.gray[300]}`,
+  backgroundColor: vars.color.gray[100],
+  padding: "11px 14px",
+  position: "relative",
+  selectors: {
+    "&:after": {
+      content: "url(/imgs/arrow-down.png)",
+      position: "absolute",
+      right: 20,
+      top: "50%",
+      transform: "translate(0, -50%)",
+      pointerEvents: "none"
+    }
+  }
 });

@@ -48,12 +48,14 @@ export default function () {
     };
     formData.forEach((value, key) => {
       if (key === 'tag_ids') data.tag_ids.push(value);
+      else if (key === 'residence_start_date') data[key] = new Date(value).toISOString().split('T')[0];
       else data[key] = value;
     });
 
     let res;
     if (id === -1) res = reqPostReview(data);
     else res = reqPatchReview(data);
+
     if (res.status === 200 || res.status === 201) {
       alert('리뷰가 저장되었습니다.');
       router.push(`/building/${houseId}`);

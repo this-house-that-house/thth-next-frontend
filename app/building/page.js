@@ -127,7 +127,7 @@ export default function () {
               : <HeartEmptyIcon fill={Styles.vars.color.gray[300]} />
           }
         </button>
-        <Button color='primary' style={{ padding: '17px 0px', flex: '1' }}>리뷰 남기기</Button>
+        <Button color='primary' style={{ padding: '17px 0px', flex: '1' }} onClick={() => router.push(`/review/?houseId=${id}&id=-1&step=0`)}>리뷰 남기기</Button>
       </div>
     </>
   )
