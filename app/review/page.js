@@ -39,7 +39,7 @@ export default function () {
     <Step6 />,
   ]
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = {
@@ -53,12 +53,11 @@ export default function () {
     });
 
     let res;
-    if (id === -1) res = reqPostReview(data);
-    else res = reqPatchReview(data);
-
+    if (id === -1) res = await reqPostReview(data);
+    else res = await reqPatchReview(data);
     if (res.status === 200 || res.status === 201) {
       alert('리뷰가 저장되었습니다.');
-      router.push(`/building/${houseId}`);
+      router.push(`/complete?variant=review`);
     }
   }
 
