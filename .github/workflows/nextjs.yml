@@ -89,7 +89,7 @@ jobs:
       - name: basepath /imgs/
         run: find ./out -type f -exec sed -i 's|/imgs/|/thth-next-frontend/imgs/|g' {} +
       - name: basepath manifest
-        run: find ./out -type f -exec sed -i 's|/manifest|/thth-next-frontend/manifest/|g' {} +
+        run: find ./out -type f -exec sed -i 's|/manifest|/thth-next-frontend/manifest|g' {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
