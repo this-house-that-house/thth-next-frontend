@@ -20,8 +20,27 @@ apiClient.interceptors.request.use(
     return config
   },
   (error) => {
-    delete apiClient.defaults.headers.common.Authorization
-    window.location.href = '/login'
+    return Promise.reject(error)
+  }
+)
+
+apiClient.interceptors.response.use(
+  (response) => {
+    return response
+  },
+  (error) => {
+    if (error.response.status === 401) {
+      delete apiClient.defaults.headers.common.Authorization
+      window.location.href = '/login'
+    }
+    else {
+      let message = '';
+      const { data } = error.response
+      Object.keys(data).forEach((key) => {
+        message += `${key}: ${data[key]}\n`
+      })
+      alert(message)
+    }
 
     return Promise.reject(error)
   }
