@@ -51,19 +51,19 @@ export default function () {
         marginBottom: 10,
         ...vars.font.bodyM18
       }}>보증금은 얼마였나요?</span>
-      <TextInput unit="만원" name="deposit" />
+      <TextInput unit="만원" name="deposit" type="number" />
       <span style={{
         marginTop: 30,
         marginBottom: 10,
         ...vars.font.bodyM18
       }}>월세는 얼마였나요?</span>
-      <TextInput unit="만원" name="monthly_rent" />
+      <TextInput unit="만원" name="monthly_rent" type="number" />
       <span style={{
         marginTop: 30,
         marginBottom: 10,
         ...vars.font.bodyM18
       }}>관리비는 얼마였나요?</span>
-      <TextInput unit="만원" name="maintenance_fee" />
+      <TextInput unit="만원" name="maintenance_fee" type="number" />
       <Link href={`/review?houseId=${houseId}&id=${id}&step=2`} style={{ textDecoration: 'none', marginTop: 'auto' }}>
         <Button variant="primary" style={{ width: '100%' }}>다음</Button>
       </Link>

@@ -13,9 +13,9 @@ export default function ({ onDone, preferredArea, minMonthlyRent, maxMonthlyRent
       <div className={questionContainer}>
         <span style={{ ...vars.font.headingSB18 }}>월세는 얼마정도 생각하나요?</span>
         <div className={rangeInputContainer}>
-          <TextInput unit="만원" style={{ flex: 1 }} name="min_monthly_rent" defaultValue={minMonthlyRent} />
+          <TextInput unit="만원" style={{ flex: 1 }} name="min_monthly_rent" defaultValue={minMonthlyRent} type="number" />
           <span className={dash} />
-          <TextInput unit="만원" style={{ flex: 1 }} name="max_monthly_rent" defaultValue={maxMonthlyRent} />
+          <TextInput unit="만원" style={{ flex: 1 }} name="max_monthly_rent" defaultValue={maxMonthlyRent} type="number" />
         </div>
       </div>
       <div className={container} />
