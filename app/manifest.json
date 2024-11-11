@@ -3,7 +3,25 @@
   "theme_color": "#ff2c2c",
   "background_color": "#ffffff",
   "short_name": "이집저집",
+  "description": "대학생을 위한 대학가 자취방 및 부동산 평가 서비스",
   "start_url": "https://this-house-that-house.github.io/thth-next-frontend/",
+  "scope": "https://this-house-that-house.github.io/thth-next-frontend/",
+  "lang": "ko",
+  "display": "fullscreen",
+  "shortcuts": [
+    {
+      "name": "지도로 보기",
+      "url": "/map"
+    },
+    {
+      "name": "체크리스트",
+      "url": "/checklist"
+    },
+    {
+      "name": "마이 페이지",
+      "url": "/my-page"
+    }
+  ],
   "icons": [
     {
       "src": "/thth-next-frontend/icons/windows11/SmallTile.scale-100.png",
