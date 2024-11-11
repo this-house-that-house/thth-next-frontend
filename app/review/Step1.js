@@ -13,7 +13,6 @@ export default function () {
   const id = params.get('id');
   const houseId = params.get('houseId');
   const [date, setDate] = useState(new Date());
-  console.log(date);
   return (
     <div style={{
       display: 'flex',

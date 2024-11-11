@@ -102,7 +102,6 @@ export default function () {
     ])
   }, [review])
 
-  console.log(review, basicTableDatas, graphTableDatas)
   return (
     <>
       {
