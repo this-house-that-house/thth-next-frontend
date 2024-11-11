@@ -37,7 +37,10 @@ export default function () {
         ...vars.font.bodyM18
       }}>몇층에 거주하셨나요?</span>
       <div className={graySelectStyle}>
-        <Select name="residence_floor" variant={"gray"} style={{ width: '100%' }}>
+        <Select name="residence_floor" variant={"gray"} style={{
+          width: '100%',
+          appearance: "none"
+        }}>
           <option value='basement'>지하</option>
           <option value='ground'>1층</option>
           <option value='lower'>저층</option>

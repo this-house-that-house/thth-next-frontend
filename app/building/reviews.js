@@ -63,7 +63,7 @@ export default function ({ reviews = [] }) {
                           <p className={Styles.descriptionPreview}>
                             {review.description}
                           </p>
-                          <Link href={''} style={{
+                          <Link href={`/review-detail?id=${review.id}`} style={{
                             textDecoration: 'none',
                             ...Styles.vars.font.bodyR14,
                             color: Styles.vars.color.primary[100]
@@ -88,13 +88,13 @@ export default function ({ reviews = [] }) {
                                   flex: 1,
                                   flexWrap: 'wrap',
                                 }}>
-                                {
-                                  review.tags.filter(v => v.category === category).map(tag => {
-                                    return (
-                                      <Check variant="rectangle" key={tag.name} disabled>{tag.name}</Check>
-                                    )
-                                  })
-                                }
+                                  {
+                                    review.tags.filter(v => v.category === category).map(tag => {
+                                      return (
+                                        <Check variant="rectangle" key={tag.name} disabled style={{ padding: '4px 10px', fontSize: 12 }}>{tag.name}</Check>
+                                      )
+                                    })
+                                  }
                                 </div>
                               </div>
                             ))

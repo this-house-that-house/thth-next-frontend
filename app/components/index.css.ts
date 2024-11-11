@@ -1101,8 +1101,7 @@ export const selectStyle = style({
   ...vars.font.bodyR14,
   border: "none",
   outline: "none",
-  backgroundColor: "transparent",
-  appearance: "none"
+  backgroundColor: "transparent"
 });
 
 export const reviewIntroLayout = style({
