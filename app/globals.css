@@ -193,11 +193,23 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  display: flex;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+
 body {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100dvh;
+  justify-content: center;
+  min-width: 370px;
+  max-width: 576px;
+  margin: "0 auto";
+  background-color: white;
+  border: 1px solid #ddd;
 }
 
 .react-datepicker-wrapper,
