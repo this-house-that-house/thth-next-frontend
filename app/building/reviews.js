@@ -77,11 +77,17 @@ export default function ({ reviews = [] }) {
                           {
                             tagTypes.map(({ name, category }) => (
                               <div key={name} style={{
+                                width: '100%',
                                 display: 'flex',
-                                alignItems: 'center',
-                                gap: 3
+                                gap: 3,
                               }}>
                                 <span style={{ width: 75, ...Styles.vars.font.bodyM14, color: Styles.vars.color.gray[500] }}>{name}</span>
+                                <div style={{
+                                  display: 'flex',
+                                  gap: 3,
+                                  flex: 1,
+                                  flexWrap: 'wrap',
+                                }}>
                                 {
                                   review.tags.filter(v => v.category === category).map(tag => {
                                     return (
@@ -89,6 +95,7 @@ export default function ({ reviews = [] }) {
                                     )
                                   })
                                 }
+                                </div>
                               </div>
                             ))
                           }
