@@ -30,13 +30,13 @@ export default function () {
   }
 
   const steps = [
-    <Intro />,
-    <Step1 />,
-    <Step2 tags={tags} />,
-    <Step3 tags={tags} />,
-    <Step4 />,
-    <Step5 tags={tags} />,
-    <Step6 />,
+    () => <Intro />,
+    () => <Step1 />,
+    () => <Step2 tags={tags} />,
+    () => <Step3 tags={tags} />,
+    () => <Step4 />,
+    () => <Step5 tags={tags} />,
+    () => <Step6 />,
   ]
 
   const onSubmitHandler = async (e) => {
@@ -69,10 +69,10 @@ export default function () {
       <StepForm id="review-form" onSubmit={onSubmitHandler}>
         {step > 0 && step <= 6 && <Progress total={6} current={step} />}
         {
-          steps.map((stepComponent, index) => {
+          steps.map((StepComponent, index) => {
             return (
               <StepPage key={index} show={step === index} className={myStyleContainer}>
-                {stepComponent}
+                <StepComponent key={index} />
               </StepPage>
             )
           })
