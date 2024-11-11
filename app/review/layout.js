@@ -27,7 +27,7 @@ export default function ({ children }) {
         <h1 style={{ ...vars.font.headingSB18 }}>{step !== 0 && data.name}</h1>
         <div style={{ width: 30 }}></div>
       </div>
-      <div className={container}>
+      <div className={container} style={{ marginBottom: 34 }}>
         {children}
       </div>
     </>

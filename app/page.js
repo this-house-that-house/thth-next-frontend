@@ -54,7 +54,7 @@ export default function () {
       alignItems: 'center',
       height: '100%',
       width: '100%',
-      padding: '0px 16px'
+      padding: '0px 16px 34px'
     }}>
       <div style={{
         width: '100%',
@@ -95,7 +95,7 @@ export default function () {
       </div >
       {
         stepIdx === 2 ?
-          <Button style={{ width: '100%', }} onClick={start}>시작하기</Button> :
+          <Button style={{ width: '100%' }} onClick={start}>시작하기</Button> :
           <Button style={{ width: '100%' }} onClick={() => setStepIdx(prev => prev + 1)}>다음</Button>
       }
     </div >

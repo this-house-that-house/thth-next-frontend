@@ -18,7 +18,7 @@ export default function ({ children }) {
         <h1 style={{ ...vars.font.headingSB18, flex: 1, textAlign: isCompare ? 'center' : 'left' }}>{text}</h1>
         <Button color={"textPrimary"} style={{ paddingRight: 6 }} onClick={() => router.push('/checklist')}>닫기</Button>
       </div>
-      <div className={container}>
+      <div className={container} style={{ marginBottom: 34 }}>
         {children}
       </div>
     </>

@@ -7,7 +7,7 @@ export default function ({ children }) {
       <div className={topBar} style={{ justifyContent: 'start' }}>
         <BackwardButton />
       </div>
-      <div className={container}>
+      <div className={container} style={{ marginBottom: 34 }}>
         {children}
       </div>
     </>

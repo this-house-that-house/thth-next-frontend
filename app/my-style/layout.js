@@ -9,7 +9,7 @@ export default function ({ children }) {
         <h1 style={{ ...vars.font.headingSB18 }}>스타일 입력하기</h1>
         <div style={{ width: 30 }}></div>
       </div>
-      <div className={container}>
+      <div className={container} style={{ marginBottom: 34 }}>
         {children}
       </div>
     </>
